@@ -1,42 +1,20 @@
-// var mongoose = require('mongoose')
-// var Poll = mongoose.model('Poll');
-
 module.exports = {
     hello: function(req, res) {
         res.send({ express: 'Hello From Express' });
     },
-    world: function(req, res) {
-        console.log(req.body);
-        res.send(
-            `I received your POST request. This is what you sent me: ${req.body.post}`,
-        );
+    contactMe: function(req, res) {
+        const send = require("gmail-send")({
+            user: 'ethanpersonalwebsite@gmail.com',
+            pass: 'xJy24o81!a2efr?nmbGE',
+            to:   'ethanchristophertom@gmail.com',
+            subject: 'test subject',
+        });
+
+        directmail.send({
+            from: `${req.body.email}`,
+            recipients: ['ethanchristophertom@gmail.com'],
+            message: `MESSAGE FROM ${req.body.name} via website\r\n\r\n${req.body.message}`
+        });
+        res.send(`Thank you for reaching out to me ${req.body.name}. I will get back to you shortly`)
     },
-    // getAll: function(req, res) {
-    //     Poll.find({})
-    //         .then(poll => {
-    //             res.json(poll);
-    //         })
-    //         .catch(errors => {
-    //             res.status(500).json(errors)
-    //         })
-    // },
-    // createPoll: function(req, res) {
-    //     const poll = new Poll(req.body);
-    //     poll.save()
-    //         .then( () => {
-    //             console.log('successfully created poll');
-    //             res.json(true);
-    //         })
-    //         .catch(errors => res.status(500).json(errors))
-    // },
-    // getOne: function(req, res) {
-    //     console.log('id HERE')
-    //     Poll.findOne({_id: req.params.id})
-    //         .then(poll => {
-    //             res.json(poll);
-    //         })
-    //         .catch(errors => {
-    //             res.status(500).json(errors);
-    //         })
-    // },
 }

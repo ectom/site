@@ -1,10 +1,13 @@
 {
   "name": "ectom.github.io",
   "version": "1.0.0",
+  "homepage": "https://ectom.github.io/client",
   "scripts": {
     "client": "cd client && yarn start",
-    "server": "cd api; nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "predeploy": "cd client; yarn run build",
+    "deploy": "cd client; gh-pages -d build"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
