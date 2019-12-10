@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {AppBar, Tabs, Tab, Toolbar} from '@material-ui/core';
-import { withStyles } from '@material-ui/styles';
 import '../styles/Navbar.css';
 import { createMuiTheme } from '@material-ui/core/styles';
 
@@ -20,6 +19,8 @@ const theme = createMuiTheme({
         },
     },
 });
+
+
 //
 // const styles = (theme) => ({
 //     toolbar: theme.palette.main,
@@ -28,11 +29,9 @@ const theme = createMuiTheme({
 
 class Navbar extends Component {
 
-
     render() {
         return (
             <div>
-                <AppBar position='fixed'>
                 <Toolbar >
                     <Tabs>
                         <Tab label="About" />
@@ -40,7 +39,6 @@ class Navbar extends Component {
                         <Tab label="Contact Me" />
                     </Tabs>
                 </Toolbar>
-                </AppBar>
             </div>
         );
     }
