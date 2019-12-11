@@ -7,6 +7,7 @@ import Contact from './pages/Contact';
 import '@material-ui/core';
 import {CssBaseline, styled} from "@material-ui/core";
 import {getMuiTheme} from '@material-ui/styles/';
+import {theme} from './styles';
 
 
 class App extends Component {
