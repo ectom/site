@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FormControl, TextField, Button} from "@material-ui/core";
+import {FormControl, TextField, Button, styled, Toolbar} from "@material-ui/core";
 // TODO turn this into a modal in the future
 
 
@@ -31,31 +31,39 @@ class Contact extends Component {
     };
 
     render() {
-        const classes = {
-            formControl: {
+
+        const MyInput = styled(TextField)({
+            '& label.Mui-focused': {
                 color: '#87103f',
-                width: '70%',
-            }
-        }
+            },
+            '& .MuiInput-underline:after': {
+                borderBottomColor: '#87103f',
+            },
+        })
 
-
+        const SubmitContact = styled(Button)({
+            background: '#87103f',
+            color: 'white',
+        });
 
         return (
+
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <FormControl component="fieldset" className={classes.formControl}>
-                        <TextField type="text"
-                                   value={this.state.name}
-                                   onChange={e => this.setState({ name: e.target.value })}
-                                   label="Full Name"
+                    <FormControl component="fieldset">
+                        <MyInput
+                            type="text"
+                            value={this.state.name}
+                            onChange={e => this.setState({ name: e.target.value })}
+                            label="Full Name"
                         />
-                        <TextField
+                        <MyInput
                             type="text"
                             value={this.state.email}
                             onChange={e => this.setState({ email: e.target.value })}
                             label="Email Address"
                         />
-                        <TextField
+                        <MyInput
                             type="text"
                             value={this.state.message}
                             onChange={e => this.setState({ message: e.target.value })}
@@ -64,9 +72,9 @@ class Contact extends Component {
                             rows={4}
                             rowsMax={10}
                         />
-                        <Button variant="contained" color="primary" type="submit">
+                        <SubmitContact variant="contained" color="primary" type="submit">
                             Send Me A Message
-                        </Button>
+                        </SubmitContact>
                     </FormControl>
                 </form>
                 <p>{this.state.responseToPost}</p>
