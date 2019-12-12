@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import About from './pages/About';
+import Work from "./pages/Work";
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import Social from "./pages/Social";
 import '@material-ui/core';
 import {CssBaseline, styled} from "@material-ui/core";
 import {getMuiTheme} from '@material-ui/styles/';
@@ -38,8 +40,10 @@ class App extends Component {
                 <Navbar/>
                 <div>
                     <About />
+                    <Work />
                     <Projects />
                     <Contact />
+                    <Social />
                 </div>
                 <p>{this.state.response}</p>
             </div>

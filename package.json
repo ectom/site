@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "homepage": "https://ectom.github.io/client",
   "scripts": {
+    "install_all": "npm i; yarn install; cd client; npm i; yarn install; cd ..; cd api; npm i; yarn install; cd ..",
     "client": "cd client && yarn start",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
