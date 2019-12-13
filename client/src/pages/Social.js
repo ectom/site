@@ -1,54 +1,66 @@
 import React, { Component } from 'react';
-import { Link } from '@material-ui/core';
+import { Link, Grid } from '@material-ui/core';
 import { styled } from '@material-ui/styles';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import EmailIcon from '@material-ui/icons/Email';
 
+
 class Social extends Component {
 
-
     render() {
-        const Github = styled(GitHubIcon)({
-            color: '#87103f'
+        const GitHub = styled(GitHubIcon)({
+            color: '#800000'
+        });
+        const LinkedIn = styled(LinkedInIcon)({
+            color: '#800000'
+        });
+        const Instagram = styled(InstagramIcon)({
+            color: '#800000'
+        });
+        const Email = styled(EmailIcon)({
+            color: '#800000'
         });
 
         return (
-//            TODO add links to each profile
+//            TODO add spacing to icons
             <>
-            <Link
-                to="https://www.github.com/ectom"
-                target="_blank"
-                rel="noopener"
-//                url: 'https://twitter.com/intent/tweet',
-//                query: {
-//                    url,
-//                },
+            <Grid
+                container
+                direction={"row"}
+                justify="center"
             >
-                <GitHubIcon/>
-            </Link>
-            <Link
-                to="https://www.linkedin.com/in/ectom"
-                target="_blank"
-                rel="noopener"
-            >
-                <LinkedInIcon/>
-            </Link>
-            <Link
-                to="https://www.instagram.com/ethanchristophertom"
-                target="_blank"
-                rel="noopener"
-            >
-                <InstagramIcon/>
-            </Link>
-            <Link
-                href={`mailto:?ethanchristophertom@gmail.com`}
-                target="_blank"
-                rel="noopener"
-            >
-                <EmailIcon/>
-            </Link>
+                <Link
+                    href="https://www.github.com/ectom"
+                    target="_blank"
+                    rel="noopener"
+
+                >
+                    <GitHub fontSize="large"/>
+                </Link>
+                <Link
+                    href="https://www.linkedin.com/in/ectom"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <LinkedIn fontSize="large"/>
+                </Link>
+                <Link
+                    href="https://www.instagram.com/ethanchristophertom"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <Instagram fontSize="large"/>
+                </Link>
+                <Link
+                    href={`mailto:?ethanchristophertom@gmail.com`}
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <Email fontSize="large"/>
+                </Link>
+            </Grid>
             </>
         )
     }

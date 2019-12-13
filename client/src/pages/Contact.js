@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import {FormControl, TextField, Button, styled, Toolbar} from "@material-ui/core";
+import { Container, FormControl, TextField, Button, styled } from "@material-ui/core";
 // TODO turn this into a modal in the future
-
 
 class Contact extends Component {
 
@@ -34,51 +33,55 @@ class Contact extends Component {
 
         const MyInput = styled(TextField)({
             '& label.Mui-focused': {
-                color: '#87103f',
+                color: '#800000',
             },
             '& .MuiInput-underline:after': {
-                borderBottomColor: '#87103f',
+                borderBottomColor: '#800000',
             },
         })
 
         const SubmitContact = styled(Button)({
-            background: '#87103f',
+            background: '#800000',
             color: 'white',
         });
 
         return (
-
-            <div>
+            <>
+            <Container component="div" maxWidth="lg">
                 <form onSubmit={this.handleSubmit}>
-                    <FormControl component="fieldset">
+                    {/*<FormControl component="fieldset">*/}
                         <MyInput
+                            fullWidth
                             type="text"
                             value={this.state.name}
                             onChange={e => this.setState({ name: e.target.value })}
                             label="Full Name"
                         />
                         <MyInput
+                            fullWidth
                             type="text"
                             value={this.state.email}
                             onChange={e => this.setState({ email: e.target.value })}
                             label="Email Address"
                         />
                         <MyInput
+                            fullWidth
                             type="text"
                             value={this.state.message}
                             onChange={e => this.setState({ message: e.target.value })}
                             label="Message"
                             multiline={true}
-                            rows={4}
+                            rows={8}
                             rowsMax={10}
                         />
                         <SubmitContact variant="contained" color="primary" type="submit">
                             Send Me A Message
                         </SubmitContact>
-                    </FormControl>
+                    {/*</FormControl>*/}
                 </form>
                 <p>{this.state.responseToPost}</p>
-            </div>
+            </Container>
+            </>
         );
     }
 }

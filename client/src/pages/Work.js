@@ -1,11 +1,66 @@
 import React, { Component } from 'react';
-import { Card, CardActionArea, CardMedia, CardContent, CardActions, Typography, Button } from '@material-ui/core';
+import { Paper, Card, CardActionArea, CardMedia, CardContent, CardActions, Typography, Button } from '@material-ui/core';
 import { makeStyles } from "@material-ui/styles";
 
 
-class Work extends Component {
+const useStyles = makeStyles({
+    card: {
+        maxWidth: 425,
+        background: '#800000',
+    },
+    media: {
+        height: 200,
+    },
+});
 
-    render() {
+export default function Work() {
+
+    const classes = useStyles();
+
+    return (
+        <>
+            <h1>Work Experience</h1>
+            <div>
+            <Paper>
+                <Card className={classes.card}>
+                    <CardActionArea>
+                    <CardMedia
+                      className={classes.media}
+                      component="img"
+                      image="/images/planetlogo.jpg"
+                      title="Planet Labs"
+                      alt="Planet Labs"
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        {/*Title*/}
+                        Software Quality Engineer, Intern | June 2019 - Present
+                      </Typography>
+                      <Typography variant="body2" color="textSecondary" component="p">
+                        {/*Description*/}
+                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                        across all continents except Antarctica
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                    {/*Link to Github Repo*/}
+                    <Button size="small" color="primary">
+                      Share
+                    </Button>
+                    {/*Link to Live Demo Site*/}
+                    <Button size="small" color="primary">
+                      Learn More
+                    </Button>
+                  </CardActions>
+                </Card>
+            </Paper>
+            </div>
+        </>
+    )
+
+}
+
 //    TODO use MUI Expansion Panels for work and Cards for Projects
 
 // Responsibilities:
@@ -29,55 +84,3 @@ class Work extends Component {
 //
 // Experience of geospatial concepts
 // Experience in Agile development environment
-//         const useStyles = makeStyles({
-//             card: {
-//                 maxWidth: 345,
-//             },
-//             media: {
-//                 height: 140,
-//             },
-//         });
-//
-//         const classes = useStyles();
-
-        return (
-            <>
-                <h1>Work Experience</h1>
-                <div>
-                    <Card>
-                        <CardActionArea>
-                        <CardMedia
-                          // className={classes.media}
-                          image="/static/images/cards/contemplative-reptile.jpg"
-                          title="Contemplative Reptile"
-                        />
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="h2">
-                            {/*Title*/}
-                            Software Quality Engineer, Intern | June 2019 - Present
-                          </Typography>
-                          <Typography variant="body2" color="textSecondary" component="p">
-                            {/*Description*/}
-                            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                            across all continents except Antarctica
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                      <CardActions>
-                        {/*Link to Github Repo*/}
-                        <Button size="small" color="primary">
-                          Share
-                        </Button>
-                        {/*Link to Live Demo Site*/}
-                        <Button size="small" color="primary">
-                          Learn More
-                        </Button>
-                      </CardActions>
-                    </Card>
-                </div>
-            </>
-        )
-    }
-}
-
-export default Work;
