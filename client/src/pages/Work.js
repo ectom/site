@@ -1,16 +1,28 @@
 import React, { Component } from 'react';
-import { Paper, Card, CardActionArea, CardMedia, CardContent, CardActions, Typography, Button } from '@material-ui/core';
+import { Grid, Card, CardActionArea, CardMedia, CardContent, CardActions, Typography, Button } from '@material-ui/core';
 import { makeStyles } from "@material-ui/styles";
 
 
 const useStyles = makeStyles({
+    background: {
+        background: '#1e2511',
+    },
     card: {
         maxWidth: 425,
         background: '#800000',
+        color: 'white',
     },
     media: {
         height: 200,
     },
+    description: {
+        color: 'white',
+    },
+    button: {
+        background: '#8e0000',
+        // background: '#6a0000',
+        color: 'white',
+    }
 });
 
 export default function Work() {
@@ -19,9 +31,12 @@ export default function Work() {
 
     return (
         <>
+
             <h1>Work Experience</h1>
-            <div>
-            <Paper>
+            <Grid 
+                container
+                justify="center"
+            >
                 <Card className={classes.card}>
                     <CardActionArea>
                     <CardMedia
@@ -32,12 +47,23 @@ export default function Work() {
                       alt="Planet Labs"
                     />
                     <CardContent>
-                      <Typography gutterBottom variant="h5" component="h2">
+                      <Typography
+                          className={classes.description}
+                          gutterBottom
+                          variant="h5"
+                          component="h2"
+                      >
                         {/*Title*/}
                         Software Quality Engineer, Intern | June 2019 - Present
                       </Typography>
-                      <Typography variant="body2" color="textSecondary" component="p">
+                      <Typography
+                          className={classes.description}
+                          variant="body2"
+                          color="textSecondary"
+                          component="p"
+                      >
                         {/*Description*/}
+                        Designed, developed and maintained automated test cases
                         Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
                         across all continents except Antarctica
                       </Typography>
@@ -45,17 +71,16 @@ export default function Work() {
                   </CardActionArea>
                   <CardActions>
                     {/*Link to Github Repo*/}
-                    <Button size="small" color="primary">
+                    <Button size="small" className={classes.button}>
                       Share
                     </Button>
                     {/*Link to Live Demo Site*/}
-                    <Button size="small" color="primary">
+                    <Button size="small" className={classes.button}>
                       Learn More
                     </Button>
                   </CardActions>
                 </Card>
-            </Paper>
-            </div>
+            </Grid>
         </>
     )
 

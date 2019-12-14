@@ -7,10 +7,18 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Social from "./pages/Social";
 import '@material-ui/core';
-import {CssBaseline, styled} from "@material-ui/core";
+import {CssBaseline, Grid, styled} from "@material-ui/core";
 import {getMuiTheme} from '@material-ui/styles/';
 import {theme} from './styles';
+import {makeStyles} from "@material-ui/styles";
 
+const useStyles = makeStyles({
+    background: {
+        background: '#1e2511',
+    },
+});
+
+const classes = useStyles();
 
 class App extends Component {
 
@@ -35,7 +43,10 @@ class App extends Component {
     render() {
 
         return (
-            <div className="App">
+            <div
+                // className="App"
+                className={classes.background}
+            >
                 <CssBaseline />
                 <Navbar/>
                 <div>
