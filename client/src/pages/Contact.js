@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import { Container, FormControl, TextField, Button, styled } from "@material-ui/core";
-// TODO turn this into a modal in the future
+import {Container, TextField, Button, styled, createMuiTheme, MuiThemeProvider} from "@material-ui/core";
+// TODO add thank you in place of form in the future
 
 class Contact extends Component {
 
@@ -31,40 +31,58 @@ class Contact extends Component {
 
     render() {
 
-        const MyInput = styled(TextField)({
-            '& label.Mui-focused': {
-                color: '#800000',
+        const theme = createMuiTheme({
+            palette:{
+                primary: {
+                    main: '#F55A44',
+                },
+                secondary: {
+                    main: '#00cc66',
+                }
             },
-            '& .MuiInput-underline:after': {
-                borderBottomColor: '#800000',
-            },
-        })
+            overrides: {
+                MuiInput: {
+                    underline: {
+                        '&:hover:not($disabled):before': { // TextField color on hover
+                            borderBottomColor: '#00cc66',
+                        },
+                    },
+                },
+                MuiInputLabel: {  // this doesn't do anything. for the textfield label on hover color
+                    '&:hover': {
+                        color: '#00cc66',
+                    },
+                },
+            }
+        });
 
         const SubmitContact = styled(Button)({
-            background: '#800000',
+            background: '#F55A44',
             color: 'white',
         });
 
         return (
             <>
+            <MuiThemeProvider theme={theme}>
             <Container component="div" maxWidth="lg">
                 <form onSubmit={this.handleSubmit}>
                     {/*<FormControl component="fieldset">*/}
-                        <MyInput
+                        <TextField
                             fullWidth
                             type="text"
                             value={this.state.name}
                             onChange={e => this.setState({ name: e.target.value })}
                             label="Full Name"
+                            style={theme}
                         />
-                        <MyInput
+                        <TextField
                             fullWidth
                             type="text"
                             value={this.state.email}
                             onChange={e => this.setState({ email: e.target.value })}
                             label="Email Address"
                         />
-                        <MyInput
+                        <TextField
                             fullWidth
                             type="text"
                             value={this.state.message}
@@ -81,6 +99,7 @@ class Contact extends Component {
                 </form>
                 <p>{this.state.responseToPost}</p>
             </Container>
+            </MuiThemeProvider>
             </>
         );
     }

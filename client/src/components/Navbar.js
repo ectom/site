@@ -4,7 +4,7 @@ import { styled } from '@material-ui/core/styles';
 
 
 const MyToolbar = styled(Toolbar)({
-    background: '#800000',
+    background: '#F55A44',
     color: 'white',
 });
 

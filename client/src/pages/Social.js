@@ -11,16 +11,16 @@ class Social extends Component {
 
     render() {
         const GitHub = styled(GitHubIcon)({
-            color: '#800000'
+            color: '#F55A44'
         });
         const LinkedIn = styled(LinkedInIcon)({
-            color: '#800000'
+            color: '#F55A44'
         });
         const Instagram = styled(InstagramIcon)({
-            color: '#800000'
+            color: '#F55A44'
         });
         const Email = styled(EmailIcon)({
-            color: '#800000'
+            color: '#F55A44'
         });
 
         return (

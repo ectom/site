@@ -4,12 +4,10 @@ import { makeStyles } from "@material-ui/styles";
 
 
 const useStyles = makeStyles({
-    background: {
-        background: '#1e2511',
-    },
+
     card: {
         maxWidth: 425,
-        background: '#800000',
+        background: '#F55A44',
         color: 'white',
     },
     media: {
@@ -19,7 +17,7 @@ const useStyles = makeStyles({
         color: 'white',
     },
     button: {
-        background: '#8e0000',
+        background: '#F56C5A',
         // background: '#6a0000',
         color: 'white',
     }

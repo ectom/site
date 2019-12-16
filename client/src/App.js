@@ -6,19 +6,15 @@ import Work from "./pages/Work";
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Social from "./pages/Social";
-import '@material-ui/core';
-import {CssBaseline, Grid, styled} from "@material-ui/core";
-import {getMuiTheme} from '@material-ui/styles/';
-import {theme} from './styles';
-import {makeStyles} from "@material-ui/styles";
+import {CssBaseline} from "@material-ui/core";
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import darkTheme from './styles/theme/darkTheme';
 
-const useStyles = makeStyles({
-    background: {
-        background: '#1e2511',
-    },
-});
 
-const classes = useStyles();
+
+// const dark = createMuiTheme(darkTheme)
+// <MuiThemeProvider theme={dark}>
+
 
 class App extends Component {
 
@@ -43,10 +39,7 @@ class App extends Component {
     render() {
 
         return (
-            <div
-                // className="App"
-                className={classes.background}
-            >
+            <div className="App">
                 <CssBaseline />
                 <Navbar/>
                 <div>
