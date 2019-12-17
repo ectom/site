@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import About from './pages/About';
+import Education from './pages/Education';
 import Work from "./pages/Work";
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
@@ -40,14 +41,15 @@ class App extends Component {
 
         return (
             <div className="App">
-                <CssBaseline />
+                <CssBaseline/>
                 <Navbar/>
                 <div>
-                    <About />
-                    <Work />
-                    <Projects />
-                    <Contact />
-                    <Social />
+                    <About/>
+                    <Education/>
+                    <Work/>
+                    <Projects/>
+                    <Contact/>
+                    <Social/>
                 </div>
                 <p>{this.state.response}</p>
             </div>
