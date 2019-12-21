@@ -15,7 +15,7 @@ class Contact extends Component {
 
     validateEmail(e) {
         console.log(e.target.value)
-        if(this.state.name.length > 1 && this.state.email.length > 1 && this.state.message.length > 1 && this.state.emailValid){
+        if(this.state.name.length > 3 && this.state.email.length > 5 && this.state.message.length > 20 && this.state.emailValid){
             this.setState({submitDisabled: false})
             return
         }
@@ -111,6 +111,7 @@ class Contact extends Component {
         return (
             <>
             <MuiThemeProvider theme={theme}>
+            <h1>Contact Me</h1>
             <Container component="div" maxWidth="md">
                 <form onSubmit={this.handleSubmit}>
                     <TextField
