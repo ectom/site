@@ -9,19 +9,17 @@ class Contact extends Component {
         email:'',
         message:'',
         responseToPost: '',
-        nameValid: false,
         emailValid: false,
-        messageValid: false,
         submitDisabled: true,
     }
 
     validateEmail(e) {
         console.log(e.target.value)
-        if(this.state.name.length > 1 && this.state.email.length > 1 && this.state.message.length > 1){
-            this.state.submitDisabled = false
+        if(this.state.name.length > 1 && this.state.email.length > 1 && this.state.message.length > 1 && this.state.emailValid){
+            this.setState({submitDisabled: false})
             return
         }
-        if(this.state.name === '' || this.state.email === '' || this.state.message === ''){
+        if(this.state.name === '' || this.state.email === '' || this.state.message === '' || !this.state.emailValid){
             this.state.submitDisabled = true
         }
         this.state.submitDisabled = true
@@ -35,6 +33,12 @@ class Contact extends Component {
     }
 
     handleChangeEmail = async e => {
+        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(re.test(e.target.value)) {
+            this.state.emailValid = true;
+        } else {
+            this.state.emailValid = false;
+        }
         this.setState({
             email: e.target.value,
         });
@@ -109,38 +113,36 @@ class Contact extends Component {
             <MuiThemeProvider theme={theme}>
             <Container component="div" maxWidth="md">
                 <form onSubmit={this.handleSubmit}>
-                    {/*<FormControl component="fieldset">*/}
-                        <TextField
-                            fullWidth
-                            type="text"
-                            value={this.state.name}
-                            onChange={this.handleChangeName}
-                            label="Full Name"
-                            style={textStyle}
-                        />
-                        <TextField
-                            fullWidth
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.handleChangeEmail}
-                            label="Email Address"
-                            style={textStyle}
-                        />
-                        <TextField
-                            fullWidth
-                            type="text"
-                            value={this.state.message}
-                            onChange={this.handleChangeMessage}
-                            label="Message"
-                            multiline={true}
-                            rows={8}
-                            rowsMax={10}
-                            style={textStyle}
-                        />
-                        <SubmitContact variant="contained" color="primary" type="submit" disabled={this.state.submitDisabled}>
-                            Send Me A Message
-                        </SubmitContact>
-                    {/*</FormControl>*/}
+                    <TextField
+                        fullWidth
+                        type="text"
+                        value={this.state.name}
+                        onChange={this.handleChangeName}
+                        label="Full Name"
+                        style={textStyle}
+                    />
+                    <TextField
+                        fullWidth
+                        type="email"
+                        value={this.state.email}
+                        onChange={this.handleChangeEmail}
+                        label="Email Address"
+                        style={textStyle}
+                    />
+                    <TextField
+                        fullWidth
+                        type="text"
+                        value={this.state.message}
+                        onChange={this.handleChangeMessage}
+                        label="Message"
+                        multiline={true}
+                        rows={8}
+                        rowsMax={10}
+                        style={textStyle}
+                    />
+                    <SubmitContact variant="contained" color="primary" type="submit" disabled={this.state.submitDisabled}>
+                        Send Me A Message
+                    </SubmitContact>
                 </form>
                 <p>{this.state.responseToPost}</p>
             </Container>
