@@ -5,6 +5,7 @@ module.exports = {
         res.send({ express: 'Hello From Express' });
     },
     contactMe: function(req, res) {
+        console.log("sfbwueh")
         const send = require("gmail-send")({
             user: 'ethanpersonalwebsite@gmail.com',
             pass: 'ejlzvojlpptsgfeh',
