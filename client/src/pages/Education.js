@@ -1,36 +1,45 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
-import StepContent from '@material-ui/core/StepContent';
-import Button from '@material-ui/core/Button';
+import {makeStyles, ThemeProvider} from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import theme from '../styles';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   root: {
     width: '100%',
+    flexGrow: 1,
+    overflow: 'hidden',
+    padding: theme.spacing(0, 3),
   },
-  button: {
-    marginTop: theme.spacing(1),
-    marginRight: theme.spacing(1),
+  paper: {
+    margin: `${theme.spacing(1)}px auto`,
+    padding: theme.spacing(10),
+    backgroundColor: '#FAFAFA',
   },
-  actionsContainer: {
-    marginBottom: theme.spacing(2),
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
   },
-  resetContainer: {
-    padding: theme.spacing(3),
-  },
-}));
+});
 
 
-export default function VerticalLinearStepper() {
+export default function Education() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      
+    <div>
+      <ThemeProvider theme={theme}>
+      <div className={classes.root}>
+      <Grid container wrap="nowrap" spacing={2}>
+        <Paper className={classes.paper} item elevation={0}>
+            <Typography variant={'h4'}>University of California, Santa Cruz</Typography>
+            <Typography variant={'h5'}>Bachelors of Science, Computer Science</Typography>
+        </Paper>
+      </Grid>
+      </div>
+      </ThemeProvider>
     </div>
   );
 }
