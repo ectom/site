@@ -36,6 +36,7 @@ export default function Education() {
         <Paper className={classes.paper} item elevation={0}>
             <Typography variant={'h4'}>University of California, Santa Cruz</Typography>
             <Typography variant={'h5'}>Bachelors of Science, Computer Science</Typography>
+            <Typography>description</Typography>
         </Paper>
       </Grid>
       </div>
