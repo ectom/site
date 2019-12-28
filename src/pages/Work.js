@@ -39,7 +39,7 @@ export default function Work() {
                     <CardMedia
                       className={classes.media}
                       component="img"
-                      image="public/images/planetlogo.jpg"
+                      image="/images/planetlogo.jpg"
                       title="Planet Labs"
                       alt="Planet Labs"
                     />
