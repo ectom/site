@@ -1,17 +1,10 @@
 //import ATHEME from '@APLACE/mui-theme';
 import {createMuiTheme} from '@material-ui/core/styles';
 import {responsiveFontSizes} from "@material-ui/core";
+import {makeStyles} from "@material-ui/styles";
+
 
 let theme = createMuiTheme({
-  typography: {
-    subtitle1: {
-      fontWeight: 'bold',
-      fontSize: 20,
-    },
-    subtitle2: {
-
-    },
-  },
   overrides: {
     MuiCssBaseline: {
       '@global': {
@@ -32,6 +25,19 @@ let theme = createMuiTheme({
   },
 });
 
-theme = responsiveFontSizes(theme);
+const customStyles = makeStyles({
+  subtitle1: {
+    fontWeight: 'bold',
+    fontSize: '250px',
+  },
+  subtitle2: {
+    fontSize: '16px'
+  },
+})
 
-export default theme;
+const exports = {
+  theme: theme,
+  customStyles: customStyles
+}
+
+export default exports;
