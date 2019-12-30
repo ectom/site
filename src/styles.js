@@ -25,19 +25,4 @@ let theme = createMuiTheme({
   },
 });
 
-const customStyles = makeStyles({
-  subtitle1: {
-    fontWeight: 'bold',
-    fontSize: '250px',
-  },
-  subtitle2: {
-    fontSize: '16px'
-  },
-})
-
-const exports = {
-  theme: theme,
-  customStyles: customStyles
-}
-
-export default exports;
+export default theme;

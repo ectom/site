@@ -1,47 +1,60 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {makeStyles, ThemeProvider} from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import exports from '../styles';
+import Link from '../components/Link.js'
+import theme from '../styles';
 
 const useStyles = makeStyles({
   root: {
     width: '100%',
     flexGrow: 1,
     overflow: 'hidden',
-    padding: exports.theme.spacing(0, 3),
+  },
+  grid: {
+    margin: `${theme.spacing(1)}px auto`,
+    maxWidth: '900px',
   },
   paper: {
-    margin: `${exports.theme.spacing(1)}px auto`,
-    padding: exports.theme.spacing(6),
+    padding: theme.spacing(5),
     backgroundColor: '#FAFAFA',
-    maxWidth: '750px',
+    maxWidth: '900px',
     minWidth: '500px',
     textAlign: 'left',
+    fontSize: '18px',
   },
   bullet: {
     display: 'inline-block',
     margin: '0 2px',
     transform: 'scale(0.8)',
   },
+  subtitle1: {
+    fontSize: '25px',
+    fontWeight: 'bold',
+  },
+  subtitle2: {
+    fontSize: '22px',
+    color: '',
+  },
 });
 
 
 export default function Education() {
+  
   const classes = useStyles();
   
   return (
   <div>
-    <ThemeProvider theme={exports.theme}>
+    <ThemeProvider theme={theme}>
       <div className={classes.root}>
-        <Grid container wrap="nowrap"  spacing={2}>
-          <Grid item>
+        <Grid container wrap="nowrap" spacing={2}>
+          <Grid container className={classes.grid}>
             <Paper className={classes.paper} item elevation={0}>
-              <Typography className={exports.customStyles.subtitle1}>
+              <Typography className={classes.subtitle1}>
                 <strong>University of California, Santa Cruz</strong>
               </Typography>
-              <Typography className={exports.customStyles.subtitle2}>
+              <Typography className={classes.subtitle2}>
                 <i>Bachelors of Science, Computer Science | Class of 2019</i>
               </Typography>
               <Typography variant={'body'}>
@@ -53,11 +66,14 @@ export default function Education() {
               </Typography>
             </Paper>
             <Paper className={classes.paper} item elevation={0}>
-              <Typography className={exports.customStyles.subtitle1}>
+              <Typography className={classes.subtitle1}>
                 <strong>Coding Dojo</strong>
               </Typography>
-              <Typography className={exports.customStyles.subtitle2}>
-                <i>Certification in MEAN Stack and Python Stack (Django/Flask)</i>
+              <Typography className={classes.subtitle2}>
+                <i>Certification in <Link link={'https://www.codingdojo.com/what-is-the-mean-stack'}
+                                          text={'MEAN Stack'}/> and <Link
+                link={'https://www.codingdojo.com/what-is-python-programming'}
+                text={'Python Stack'}/> (Django/Flask)</i>
               </Typography>
               <Typography variant={'body'}>
                 Over the summer of 2017, I spent 70-90 hours a week at the Silicon Valley Coding Dojo location. There I
@@ -72,4 +88,5 @@ export default function Education() {
     </ThemeProvider>
   </div>
   );
+  
 }
