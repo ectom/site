@@ -53,17 +53,19 @@ function CustomCard(props) {
 
   
   function skills() {
-    const skills = props.skills;
-    const listSkills = skills.map((skill) =>
+    if(props.skills){
+      const skills = props.skills;
+      const listSkills = skills.map((skill) =>
       <li>{skill}</li>
-    );
-    return (
+      );
+      return (
       <>
         <br/>
-        <Typography variant={'h6'}>Relevant Skills:</Typography>
+        <Typography variant={'h6'}>Relevant Technologies:</Typography>
         <ul className={classes.skills}>{listSkills}</ul>
       </>
-    );
+      );
+    }
   }
   
   function renderButton(buttonLink, buttonText){
