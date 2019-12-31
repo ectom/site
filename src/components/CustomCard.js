@@ -13,21 +13,20 @@ const useStyles = makeStyles({
     color: 'white',
   },
   media: {
-    height: 200,
+    height: 400,
   },
   description: {
     color: 'white',
   },
   button: {
     background: '#F56C5A',
-    // background: '#6a0000',
     color: 'white',
   }
 });
 
 
 
-const CustomCard = (props) => {
+function CustomCard(props) {
   
   const classes = useStyles()
   
@@ -48,7 +47,10 @@ const CustomCard = (props) => {
   
   return (
     <Card className={classes.card}>
-      <CardActionArea href={this.props.cardLink} target={'_blank'}>
+      <CardActionArea
+        href={props.cardLink}
+        target={'_blank'}
+      >
         <CardMedia
         className={classes.media}
         component="img"
@@ -63,7 +65,7 @@ const CustomCard = (props) => {
           variant="h5"
           component="h2"
           >
-            {this.props.title}
+            {props.title}
           </Typography>
           <Typography
           className={classes.description}
@@ -71,21 +73,13 @@ const CustomCard = (props) => {
           color="textSecondary"
           component="p"
           >
-            {this.props.description}
+            {props.description}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        {/*Link to Github Repo*/}
-        {this.renderButton(this.props.button1Link, this.props.button1Text)}
-        {this.renderButton(this.props.button2Link, this.props.button2Text)}
-        <Button size="small" className={classes.button}>
-          Share
-        </Button>
-        {/*Link to Live Demo Site*/}
-        <Button size="small" className={classes.button}>
-          Learn More
-        </Button>
+        {renderButton(props.button1Link, props.button1Text)}
+        {renderButton(props.button2Link, props.button2Text)}
       </CardActions>
     </Card>
   )

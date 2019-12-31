@@ -4,52 +4,25 @@ import {makeStyles} from "@material-ui/styles";
 import CustomCard from "../components/CustomCard";
 
 
-const useStyles = makeStyles({
-  
-  card: {
-    maxWidth: '900px',
-    minWidth: '500px',
-    textAlign: 'left',
-    background: '#F55A44',
-    color: 'white',
-  },
-  media: {
-    height: 200,
-  },
-  description: {
-    color: 'white',
-  },
-  button: {
-    background: '#F56C5A',
-    // background: '#6a0000',
-    color: 'white',
-  }
-});
-
 export default function Work() {
   
-  const classes = useStyles();
-  
   return (
-  <>
-    <h1>Work Experience</h1>
-    <Grid
-    container
-    justify="center"
-    >
-      <CustomCard
-        cardLink={'https://www.planet.com'}
-        title={'Software Quality Engineer, Intern | June 2019 - Present'}
-        description={'Designed, developed and maintained automated test cases\n' +
-        '            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging\n' +
-        '            across all continents except Antarctica'}
-        button1Link={'google.com'}
-        button1Text={'button1'}
-      />
-    </Grid>
-  </>
+    <>
+      <h1>Work Experience</h1>
+      <Grid
+      container
+      justify="center"
+      >
+        <CustomCard
+          title={'Software Quality Engineer, Intern | June 2019 - Present'}
+          description={'Designed, developed and maintained automated test cases\n' +
+          '            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging\n' +
+          '            across all continents except Antarctica'}
+          cardLink={'https://www.planet.com'}
+        />
+      </Grid>
+    </>
   )
-  
 }
 
 //    TODO use MUI Expansion Panels for work and Cards for Projects
