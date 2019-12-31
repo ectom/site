@@ -33,6 +33,25 @@ function CustomCard(props) {
   
   const classes = useStyles()
   
+  function actionArea() {
+    if(props.image){
+      return(
+        <CardActionArea
+        href={props.cardLink}
+        target={'_blank'}
+        >
+          <CardMedia
+          className={classes.media}
+          component="img"
+          image={props.image}
+          alt={props.title}
+          />
+        </CardActionArea>
+      );
+    }
+  }
+
+  
   function skills() {
     const skills = props.skills;
     const listSkills = skills.map((skill) =>
@@ -64,18 +83,7 @@ function CustomCard(props) {
   
   return (
     <Card className={classes.card}>
-      <CardActionArea
-        href={props.cardLink}
-        target={'_blank'}
-      >
-        <CardMedia
-        className={classes.media}
-        component="img"
-        image="./images/planetlogo.jpg"
-        title="Planet Labs"
-        alt="Planet Labs"
-        />
-      </CardActionArea>
+      {actionArea()}
       <CardContent>
         <Typography
         className={classes.description}

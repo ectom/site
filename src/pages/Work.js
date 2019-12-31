@@ -14,6 +14,7 @@ export default function Work() {
     justify="center"
     >
       <CustomCard
+      image={'./images/planetlogo.jpg'}
       title={'Software Engineer in Test, Intern (June 2019 - Present)'}
       description={'I was hired right out of college and have been working at Planet since then. My responsibilities ' +
       'include designing and developing automated test cases in Cypress (Javascript), PyTest, and Selenium (Python). I ' +

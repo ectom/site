@@ -34,35 +34,26 @@ export default function Projects() {
                 justify="center"
             >
                 <Card className={classes.card}>
-                    <CardActionArea>
-                        <CardMedia
-                            className={classes.media}
-                            component="img"
-                            image=""
-                            title="Project Image"
-                            alt="Project Image"
-                        />
-                        <CardContent>
-                            <Typography
-                                className={classes.description}
-                                gutterBottom
-                                variant="h5"
-                                component="h2"
-                            >
-                                PyTron
-                            </Typography>
-                            <Typography
-                                className={classes.description}
-                                variant="body2"
-                                color="textSecondary"
-                                component="p"
-                            >
-                                Attendance app that helps manage flow of students.
-                                Logs when students check in and out. Notifies parents
-                                when students have checked out via email or text
-                            </Typography>
-                        </CardContent>
-                    </CardActionArea>
+                    <CardContent>
+                        <Typography
+                            className={classes.description}
+                            gutterBottom
+                            variant="h5"
+                            component="h2"
+                        >
+                            PyTron
+                        </Typography>
+                        <Typography
+                            className={classes.description}
+                            variant="body2"
+                            color="textSecondary"
+                            component="p"
+                        >
+                            Attendance app that helps manage flow of students.
+                            Logs when students check in and out. Notifies parents
+                            when students have checked out via email or text
+                        </Typography>
+                    </CardContent>
                     <CardActions>
                         {/*Link to Github Repo*/}
                         <Button size="small" className={classes.button}>
