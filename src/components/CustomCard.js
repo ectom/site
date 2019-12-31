@@ -6,7 +6,7 @@ import {makeStyles} from "@material-ui/styles";
 const useStyles = makeStyles({
   
   card: {
-    maxWidth: '900px',
+    maxWidth: '800px',
     minWidth: '500px',
     textAlign: 'left',
     background: '#F55A44',
@@ -21,7 +21,10 @@ const useStyles = makeStyles({
   button: {
     background: '#F56C5A',
     color: 'white',
-  }
+  },
+  skills: {
+    columnCount: 4
+  },
 });
 
 
@@ -29,6 +32,20 @@ const useStyles = makeStyles({
 function CustomCard(props) {
   
   const classes = useStyles()
+  
+  function skills() {
+    const skills = props.skills;
+    const listSkills = skills.map((skill) =>
+      <li>{skill}</li>
+    );
+    return (
+      <>
+        <br/>
+        <Typography variant={'h6'}>Relevant Skills:</Typography>
+        <ul className={classes.skills}>{listSkills}</ul>
+      </>
+    );
+  }
   
   function renderButton(buttonLink, buttonText){
     if(buttonLink && buttonText){
@@ -58,25 +75,26 @@ function CustomCard(props) {
         title="Planet Labs"
         alt="Planet Labs"
         />
-        <CardContent>
-          <Typography
-          className={classes.description}
-          gutterBottom
-          variant="h5"
-          component="h2"
-          >
-            {props.title}
-          </Typography>
-          <Typography
-          className={classes.description}
-          variant="body2"
-          color="textSecondary"
-          component="p"
-          >
-            {props.description}
-          </Typography>
-        </CardContent>
       </CardActionArea>
+      <CardContent>
+        <Typography
+        className={classes.description}
+        gutterBottom
+        variant="h5"
+        component="h2"
+        >
+          {props.title}
+        </Typography>
+        <Typography
+        className={classes.description}
+        variant="body2"
+        color="textSecondary"
+        component="p"
+        >
+          {props.description}
+        </Typography>
+        {skills()}
+      </CardContent>
       <CardActions>
         {renderButton(props.button1Link, props.button1Text)}
         {renderButton(props.button2Link, props.button2Text)}
