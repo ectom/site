@@ -6,7 +6,7 @@ import Education from './pages/Education';
 import Work from "./pages/Work";
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
-import Social from "./pages/Social";
+import Social from "./components/Social";
 import {CssBaseline} from "@material-ui/core";
 
 export default function App() {

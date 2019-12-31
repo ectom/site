@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     color: 'white',
   },
   media: {
-    height: 400,
+    height: 300,
   },
   description: {
     color: 'white',
@@ -37,14 +37,14 @@ function CustomCard(props) {
     if(props.image){
       return(
         <CardActionArea
-        href={props.cardLink}
-        target={'_blank'}
+          href={props.cardLink}
+          target={'_blank'}
         >
           <CardMedia
-          className={classes.media}
-          component="img"
-          image={props.image}
-          alt={props.title}
+            className={classes.media}
+            component="img"
+            image={props.image}
+            alt={props.title}
           />
         </CardActionArea>
       );
@@ -84,7 +84,7 @@ function CustomCard(props) {
   }
   
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} elevation={3}>
       {actionArea()}
       <CardContent>
         <Typography
