@@ -1,86 +1,55 @@
-import React, { Component } from 'react';
-import { Grid, Card, CardActionArea, CardMedia, CardContent, CardActions, Typography, Button } from '@material-ui/core';
-import { makeStyles } from "@material-ui/styles";
+import React, {Component} from 'react';
+import {Grid, Card, CardActionArea, CardMedia, CardContent, CardActions, Typography, Button} from '@material-ui/core';
+import {makeStyles} from "@material-ui/styles";
+import CustomCard from "../components/CustomCard";
 
 
 const useStyles = makeStyles({
-
-    card: {
-        maxWidth: 425,
-        background: '#F55A44',
-        color: 'white',
-    },
-    media: {
-        height: 200,
-    },
-    description: {
-        color: 'white',
-    },
-    button: {
-        background: '#F56C5A',
-        // background: '#6a0000',
-        color: 'white',
-    }
+  
+  card: {
+    maxWidth: '900px',
+    minWidth: '500px',
+    textAlign: 'left',
+    background: '#F55A44',
+    color: 'white',
+  },
+  media: {
+    height: 200,
+  },
+  description: {
+    color: 'white',
+  },
+  button: {
+    background: '#F56C5A',
+    // background: '#6a0000',
+    color: 'white',
+  }
 });
 
 export default function Work() {
-
-    const classes = useStyles();
-
-    return (
-        <>
-            <h1>Work Experience</h1>
-            <Grid 
-                container
-                justify="center"
-            >
-                <Card className={classes.card}>
-                    <CardActionArea>
-                    <CardMedia
-                      className={classes.media}
-                      component="img"
-                      image="./images/planetlogo.jpg"
-                      title="Planet Labs"
-                      alt="Planet Labs"
-                    />
-                    <CardContent>
-                      <Typography
-                          className={classes.description}
-                          gutterBottom
-                          variant="h5"
-                          component="h2"
-                      >
-                        {/*Title*/}
-                        Software Quality Engineer, Intern | June 2019 - Present
-                      </Typography>
-                      <Typography
-                          className={classes.description}
-                          variant="body2"
-                          color="textSecondary"
-                          component="p"
-                      >
-                        {/*Description*/}
-                        Designed, developed and maintained automated test cases
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    {/*Link to Github Repo*/}
-                    <Button size="small" className={classes.button}>
-                      Share
-                    </Button>
-                    {/*Link to Live Demo Site*/}
-                    <Button size="small" className={classes.button}>
-                      Learn More
-                    </Button>
-                  </CardActions>
-                </Card>
-            </Grid>
-        </>
-    )
-
+  
+  const classes = useStyles();
+  
+  return (
+  <>
+    <h1>Work Experience</h1>
+    <Grid
+    container
+    justify="center"
+    >
+      <CustomCard
+        cardLink={'https://www.planet.com'}
+        title={'Software Quality Engineer, Intern | June 2019 - Present'}
+        description={'Designed, developed and maintained automated test cases\n' +
+        '            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging\n' +
+        '            across all continents except Antarctica'}
+        button1Link={'google.com'}
+        button1Text={'button1'}
+      />
+    </Grid>
+  </>
+  )
+  
 }
 
 //    TODO use MUI Expansion Panels for work and Cards for Projects
