@@ -8,7 +8,8 @@ function Contact() {
   const SubmitButton = styled(Button)({
     background: '#F55A44',
     color: 'white',
-    marginBottom: '3%',
+    margin: '3%',
+    padding: '2% 8% 2% 8%',
   });
   
   return (
