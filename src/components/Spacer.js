@@ -4,7 +4,7 @@ import {makeStyles} from "@material-ui/core";
 
 const useStyles = makeStyles({
   space: {
-    height: '20%',
+    height: '15em',
   },
 });
 
@@ -12,7 +12,7 @@ export default function Spacer() {
   const classes = useStyles()
   return (
   <>
-    <div classeName={classes.space}></div>
+    <div className={classes.space}/>
   </>
   );
 }
