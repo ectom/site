@@ -10,8 +10,9 @@ class Link extends Component {
   }
   
   toggleHover = () => {
-    this.setState({ hover: !this.state.hover });
+    this.setState({hover: !this.state.hover});
   };
+  
   render() {
     let linkStyle;
     if (this.state.hover) {
@@ -20,7 +21,8 @@ class Link extends Component {
       linkStyle = {textDecoration: 'none', color: '#F55A44'}
     }
     return (
-      <a style={linkStyle} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover} href={this.props.link} target={'_blank'}>{this.props.text}</a>
+    <a style={linkStyle} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover} href={this.props.link}
+       target={'_blank'}>{this.props.text}</a>
     );
   }
 }

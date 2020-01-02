@@ -28,32 +28,31 @@ const useStyles = makeStyles({
 });
 
 
-
 function CustomCard(props) {
   
   const classes = useStyles()
   
   function actionArea() {
-    if(props.image){
-      return(
-        <CardActionArea
-          href={props.cardLink}
-          target={'_blank'}
-        >
-          <CardMedia
-            className={classes.media}
-            component="img"
-            image={props.image}
-            alt={props.title}
-          />
-        </CardActionArea>
+    if (props.image) {
+      return (
+      <CardActionArea
+      href={props.cardLink}
+      target={'_blank'}
+      >
+        <CardMedia
+        className={classes.media}
+        component="img"
+        image={props.image}
+        alt={props.title}
+        />
+      </CardActionArea>
       );
     }
   }
-
+  
   
   function skills() {
-    if(props.skills){
+    if (props.skills) {
       const skills = props.skills;
       const listSkills = skills.map((skill) =>
       <li>{skill}</li>
@@ -68,8 +67,8 @@ function CustomCard(props) {
     }
   }
   
-  function renderButton(buttonLink, buttonText){
-    if(buttonLink && buttonText){
+  function renderButton(buttonLink, buttonText) {
+    if (buttonLink && buttonText) {
       return (
       <Button
       size="small"
@@ -84,32 +83,32 @@ function CustomCard(props) {
   }
   
   return (
-    <Card className={classes.card} elevation={3}>
-      {actionArea()}
-      <CardContent>
-        <Typography
-        className={classes.description}
-        gutterBottom
-        variant="h5"
-        component="h2"
-        >
-          {props.title}
-        </Typography>
-        <Typography
-        className={classes.description}
-        variant="body2"
-        color="textSecondary"
-        component="p"
-        >
-          {props.description}
-        </Typography>
-        {skills()}
-      </CardContent>
-      <CardActions>
-        {renderButton(props.button1Link, props.button1Text)}
-        {renderButton(props.button2Link, props.button2Text)}
-      </CardActions>
-    </Card>
+  <Card className={classes.card} elevation={3}>
+    {actionArea()}
+    <CardContent>
+      <Typography
+      className={classes.description}
+      gutterBottom
+      variant="h5"
+      component="h2"
+      >
+        {props.title}
+      </Typography>
+      <Typography
+      className={classes.description}
+      variant="body2"
+      color="textSecondary"
+      component="p"
+      >
+        {props.description}
+      </Typography>
+      {skills()}
+    </CardContent>
+    <CardActions>
+      {renderButton(props.button1Link, props.button1Text)}
+      {renderButton(props.button2Link, props.button2Text)}
+    </CardActions>
+  </Card>
   )
 }
 
