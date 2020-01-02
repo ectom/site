@@ -8,8 +8,12 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Spacer() {
-  const classes = useStyles()
+export default function Spacer(props) {
+  const classes = makeStyles({
+    space: {
+      height: props.space + 'em',
+    },
+  })();
   return (
   <>
     <div className={classes.space}/>

@@ -18,15 +18,14 @@ export default function App() {
     <Navbar/>
     <div>
       <About/>
-      <Spacer/>
       <Education/>
-      <Spacer/>
+      <Spacer space={15}/>
       <Work/>
-      <Spacer/>
+      <Spacer space={15}/>
       <Projects/>
-      <Spacer/>
+      <Spacer space={15}/>
       <Contact/>
-      <Spacer/>
+      <Spacer space={5}/>
       <Social/>
     </div>
   </div>
