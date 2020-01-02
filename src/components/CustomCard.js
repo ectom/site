@@ -1,6 +1,7 @@
-import {Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography} from "@material-ui/core";
+import {Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography} from "@material-ui/core";
 import React from "react";
 import {makeStyles} from "@material-ui/styles";
+import Spacer from './Spacer';
 
 
 const useStyles = makeStyles({
@@ -83,32 +84,34 @@ function CustomCard(props) {
   }
   
   return (
-  <Card className={classes.card} elevation={3}>
-    {actionArea()}
-    <CardContent>
-      <Typography
-      className={classes.description}
-      gutterBottom
-      variant="h5"
-      component="h2"
-      >
-        {props.title}
-      </Typography>
-      <Typography
-      className={classes.description}
-      variant="body2"
-      color="textSecondary"
-      component="p"
-      >
-        {props.description}
-      </Typography>
-      {skills()}
-    </CardContent>
-    <CardActions>
-      {renderButton(props.button1Link, props.button1Text)}
-      {renderButton(props.button2Link, props.button2Text)}
-    </CardActions>
-  </Card>
+  <>
+    <Card className={classes.card} elevation={3}>
+      {actionArea()}
+      <CardContent>
+        <Typography
+        className={classes.description}
+        gutterBottom
+        variant="h5"
+        component="h2"
+        >
+          {props.title}
+        </Typography>
+        <Typography
+        className={classes.description}
+        variant="body2"
+        color="textSecondary"
+        component="p"
+        >
+          {props.description}
+        </Typography>
+        {skills()}
+      </CardContent>
+      <CardActions>
+        {renderButton(props.button1Link, props.button1Text)}
+        {renderButton(props.button2Link, props.button2Text)}
+      </CardActions>
+    </Card>
+  </>
   )
 }
 

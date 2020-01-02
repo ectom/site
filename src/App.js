@@ -19,11 +19,11 @@ export default function App() {
     <div>
       <About/>
       <Education/>
-      <Spacer space={15}/>
+      <Spacer space={10}/>
       <Work/>
-      <Spacer space={15}/>
+      <Spacer space={10}/>
       <Projects/>
-      <Spacer space={15}/>
+      <Spacer space={10}/>
       <Contact/>
       <Spacer space={5}/>
       <Social/>
