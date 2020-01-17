@@ -29,7 +29,7 @@ function Contact() {
   return (
   <>
     <MuiThemeProvider theme={theme}>
-      <h1>Contact Me</h1>
+      <h1 id={'Contact'}>Contact Me</h1>
       <Container component="div" maxWidth="md">
         <Paper className={classes.paper} elevation={0}>
           I'm always looking for new opportunities to learn new things and improve my own skills. If you want to work

@@ -44,7 +44,7 @@ function About() {
   
   return (
   <div className={classes.root}>
-    <h1>About</h1>
+    <h1 id={'About'}>About</h1>
     
     <Grid container wrap="nowrap" spacing={2}>
       <Grid container className={classes.grid}>
