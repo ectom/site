@@ -8,7 +8,7 @@ export default function Work() {
   
   return (
   <>
-    <h1>Work Experience</h1>
+    <h1 id={'Experience'}>Work Experience</h1>
     <Grid
     container
     justify="center"

@@ -43,7 +43,7 @@ export default function Projects() {
   
   return (
   <>
-    <h1>Projects</h1>
+    <h1 id={'Projects'}>Projects</h1>
     <Grid
     container
     justify="center"

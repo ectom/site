@@ -1,5 +1,5 @@
 import React from 'react';
-import {Tabs, Tab, Toolbar} from '@material-ui/core';
+import {Button, Toolbar, AppBar} from '@material-ui/core';
 import {styled} from '@material-ui/core/styles';
 
 
@@ -8,18 +8,41 @@ const MyToolbar = styled(Toolbar)({
   color: 'white',
 });
 
-function Navbar() {
+const NavLink = (props) => {
+  
+  const classes = {color: 'white'}
+  
+  function handleClick(ref) {
+    const element = document.getElementById(ref);
+  
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
+  
   return (
-  <div>
-    <MyToolbar>
-      <Tabs>
-        <Tab label="About"/>
-        <Tab label="Projects"/>
-        <Tab label="Contact Me"/>
-      </Tabs>
-    </MyToolbar>
-  </div>
-  );
+    <Button
+      style={classes}
+      onClick={() => handleClick(props.label)}
+    >
+      {props.label}
+    </Button>
+  )
 }
 
-export default Navbar;
+const NavBar = () => {
+  return(
+  <div>
+    <AppBar position="static">
+      <MyToolbar>
+        <NavLink label={'About'}/>
+        <NavLink label={'Experience'}/>
+        <NavLink label={'Projects'}/>
+        <NavLink label={'Contact'}/>
+      </MyToolbar>
+    </AppBar>
+  </div>
+  )
+}
+export default NavBar;
