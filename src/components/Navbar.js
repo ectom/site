@@ -10,8 +10,6 @@ const MyToolbar = styled(Toolbar)({
 
 const NavLink = (props) => {
   
-  const classes = {color: 'white'}
-  
   function handleClick(ref) {
     const element = document.getElementById(ref);
   
@@ -23,7 +21,7 @@ const NavLink = (props) => {
   
   return (
     <Button
-      style={classes}
+      style={{color: 'white'}}
       onClick={() => handleClick(props.label)}
     >
       {props.label}
