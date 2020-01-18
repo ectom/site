@@ -1,28 +1,28 @@
 import React from 'react';
-import {Button, Toolbar, AppBar} from '@material-ui/core';
-import {styled} from '@material-ui/core/styles';
+import { Button, Toolbar, AppBar } from '@material-ui/core';
+import { styled } from '@material-ui/core/styles';
 
 
-const MyToolbar = styled(Toolbar)({
+const MyToolbar = styled( Toolbar )( {
   background: 'black',
   color: 'white',
-});
+} );
 
-const NavLink = (props) => {
+const NavLink = ( props ) => {
   
-  function handleClick(ref) {
-    const element = document.getElementById(ref);
-  
-    element.scrollIntoView({
+  function handleClick( ref ) {
+    const element = document.getElementById( ref );
+    
+    element.scrollIntoView( {
       behavior: 'smooth',
       block: 'start',
-    });
+    } );
   }
   
   return (
     <Button
-      style={{color: 'white'}}
-      onClick={() => handleClick(props.label)}
+      style={{ color: 'white', marginRight: '2%' }}
+      onClick={() => handleClick( props.label )}
     >
       {props.label}
     </Button>
@@ -30,17 +30,17 @@ const NavLink = (props) => {
 }
 
 const NavBar = () => {
-  return(
-  <div>
-    <AppBar position="static">
-      <MyToolbar>
-        <NavLink label={'About'}/>
-        <NavLink label={'Experience'}/>
-        <NavLink label={'Projects'}/>
-        <NavLink label={'Contact'}/>
-      </MyToolbar>
-    </AppBar>
-  </div>
+  return (
+    <div>
+      <AppBar position="static">
+        <MyToolbar>
+          <NavLink label={'About'}/>
+          <NavLink label={'Experience'}/>
+          <NavLink label={'Projects'}/>
+          <NavLink label={'Contact'}/>
+        </MyToolbar>
+      </AppBar>
+    </div>
   )
 }
 export default NavBar;
