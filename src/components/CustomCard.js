@@ -12,6 +12,7 @@ const useStyles = makeStyles( {
     textAlign: 'left',
     background: '#F55A44',
     color: 'white',
+    marginBottom: 50
   },
   media: {
     height: 300,

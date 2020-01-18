@@ -2,9 +2,8 @@ import React from 'react';
 import { Grid, makeStyles } from "@material-ui/core";
 import CustomCard from "../components/CustomCard";
 import theme from "../styles";
-import Spacer from '../components/Spacer';
 
-const useStyles = makeStyles( {
+const useStyles = makeStyles({
   root: {
     width: '100%',
     flexGrow: 1,
@@ -35,7 +34,7 @@ const useStyles = makeStyles( {
     fontSize: '22px',
     color: '',
   },
-} );
+});
 
 export default function Projects() {
   
@@ -58,6 +57,7 @@ export default function Projects() {
           button1Link={'https://www.github.com/ectom/PyTron'}
           button2Text={'Live Demo'}
           button2Link={'https://ectom.github.io//404'}
+          skills={['Python', 'Flask', 'MySQL']}
         />
         <CustomCard
           title={'Portfolio Website'}
