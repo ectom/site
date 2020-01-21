@@ -49,15 +49,15 @@ export default function Projects() {
         className={classes.grid}
       >
         <CustomCard
-          title={'PyTron'}
+          title={'Student Manager'}
           description={'Attendance app that helps manage flow of students.\n' +
           '            Logs when students check in and out. Notifies parents\n' +
           '            when students have checked out via email or text'}
           button1Text={'GitHub'}
-          button1Link={'https://www.github.com/ectom/PyTron'}
+          button1Link={'https://www.github.com/ectom/StudentManager'}
           button2Text={'Live Demo'}
           button2Link={'https://ectom.github.io//404'}
-          skills={['Python', 'Flask', 'MySQL']}
+          skills={['React', 'Express', 'Electron', 'Node.js', 'REST API', 'Material UI', 'Material Table']}
         />
         <CustomCard
           title={'Portfolio Website'}
