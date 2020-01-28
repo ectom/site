@@ -55,9 +55,7 @@ export default function Projects() {
           '            when students have checked out via email or text'}
           button1Text={'GitHub'}
           button1Link={'https://www.github.com/ectom/StudentManager'}
-          button2Text={'Live Demo'}
-          button2Link={'https://ectom.github.io//404'}
-          skills={['React', 'Express', 'Electron', 'Node.js', 'REST API', 'Material UI', 'Material Table']}
+          skills={['React', 'Electron', 'Node.js', 'MySQL', 'Electron IPC', 'Material UI', 'Material Table']}
         />
         <CustomCard
           title={'Portfolio Website'}
