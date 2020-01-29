@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/site/static/css/main.42bcd9f7.chunk.css",
+    "main.js": "/site/static/js/main.7d86430b.chunk.js",
+    "main.js.map": "/site/static/js/main.7d86430b.chunk.js.map",
+    "runtime-main.js": "/site/static/js/runtime-main.ebb8f33b.js",
+    "runtime-main.js.map": "/site/static/js/runtime-main.ebb8f33b.js.map",
+    "static/js/2.6144d673.chunk.js": "/site/static/js/2.6144d673.chunk.js",
+    "static/js/2.6144d673.chunk.js.map": "/site/static/js/2.6144d673.chunk.js.map",
+    "index.html": "/site/index.html",
+    "precache-manifest.a04da21c4ec07bf3113dacc81e38a44f.js": "/site/precache-manifest.a04da21c4ec07bf3113dacc81e38a44f.js",
+    "service-worker.js": "/site/service-worker.js",
+    "static/css/main.42bcd9f7.chunk.css.map": "/site/static/css/main.42bcd9f7.chunk.css.map",
+    "static/js/2.6144d673.chunk.js.LICENSE": "/site/static/js/2.6144d673.chunk.js.LICENSE",
+    "static/media/Raleway-Regular.ttf": "/site/static/media/Raleway-Regular.6e4a9679.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ebb8f33b.js",
+    "static/js/2.6144d673.chunk.js",
+    "static/css/main.42bcd9f7.chunk.css",
+    "static/js/main.7d86430b.chunk.js"
+  ]
+}
