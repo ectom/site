@@ -10,7 +10,7 @@
     "eject": "react-scripts eject",
     "client": "yarn start",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -b master -d build"
   },
   "dependencies": {
     "@material-ui/core": "^4.7.2",
