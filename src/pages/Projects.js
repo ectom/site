@@ -58,16 +58,17 @@ export default function Projects() {
           skills={['React', 'Electron', 'Node.js', 'MySQL', 'Electron IPC', 'Material UI', 'Material Table']}
         />
         <CustomCard
-          title={'Portfolio Website'}
-          description={'My personal website to display the various projects and places I\'ve worked. This is ' +
-          'webpage built with React from the Create React App template and Material UI. I self-taught myself React' +
+          title={'Portfolio Website 2.0'}
+          description={'My second and current attempt at a personal website, created to display the various projects ' +
+          'and places I\'ve worked. This is ' +
+          'webpage is built with React from the Create React App template and Material UI. I self-taught myself React' +
           'and this is my first React project, and through it, I am learning the usefulness and importance of ' +
           'reusable and custom components.'}
           button1Text={'Github'}
           button1Link={'https://www.github.com/ectom/site'}
           button2Text={'Live Demo'}
           button2Link={'https://ectom.github.io/site'}
-          skills={['Javascript', 'React', 'Material UI', 'Node', 'Create React App', 'gh-pages']}
+          skills={['Javascript', 'React', 'Material UI', 'Node.js', 'Create React App', 'gh-pages']}
         />
         <CustomCard
           title={'TakeAPoll'}
@@ -76,7 +77,16 @@ export default function Projects() {
           'development, but I am continuously working on it '}
           button1Text={'Github'}
           button1Link={'https://www.github.com/ectom/TakeAPoll'}
-          skills={['React', 'React Native', 'Google Sheets API', 'Javascript', 'Node']}
+          skills={['React', 'React Native', 'Google Sheets API', 'Javascript', 'Node.js']}
+        />
+        <CustomCard
+          title={'Portfolio Website 1.0'}
+          description={'My first attempt at a personal website. This is a full stack portfolio web app using MEAN ' +
+          'stack. I went a bit overkill by adding a backend database and Node server to control the contact form and ' +
+          'store data of messages. It is organized according to standard MVC patterns.'}
+          button1Text={'Github'}
+          button1Link={'https://www.github.com/ectom/sitev1'}
+          skills={['Angular', 'MongoDB', 'Express', 'Node.js', 'MVC Framework', 'Nodemailer']}
         />
       </Grid>
     </>

@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-server).
+# My Portfolio 2.0
+Made with React and Material UI
 
 ## Available Scripts
 
