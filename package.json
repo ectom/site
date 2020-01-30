@@ -2,7 +2,7 @@
   "name": "ectom.github.io",
   "version": "1.0.0",
   "license": "GNU",
-  "homepage": "https://ectom.github.io",
+  "homepage": "https://ectom.github.io/site",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
