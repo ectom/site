@@ -47,7 +47,7 @@ class Social extends Component {
             <LinkedIn fontSize="large"/>
           </Link>
           <Link
-            href="https://www.instagram.com/ethanchristophertom"
+            href="https://www.instagram.com/ethantom_"
             target="_blank"
             rel="noopener"
           >

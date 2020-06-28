@@ -32,6 +32,10 @@ const theme = createMuiTheme( {
         fontSize: 14,
       },
     },
+    textField: {
+      display: 'block',
+      marginBottom: '10px',
+    }
   },
 } );
 
