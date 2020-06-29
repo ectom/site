@@ -32,7 +32,7 @@ const useStyles = makeStyles( {
 
 function CustomCard( props ) {
   
-  const classes = useStyles()
+  const classes = useStyles();
   
   function actionArea() {
     if ( props.image ) {

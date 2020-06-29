@@ -81,14 +81,14 @@ function Contact() {
             connections please send me an email and I'll do my best to get back to you as soon as possible.
           </Paper>
           
-          <Grid container xs={12} spacing={3}>
-            <Grid item xs={2}>
-              <Grid item xs={12}><Typography variant={'h6'} align={'left'} style={{height: '55px'}}>Name*</Typography></Grid>
-              <Grid item xs={12}><Typography variant={'h6'} align={'left'} style={{height: '55px'}}>Contact Info*</Typography></Grid>
-              <Grid item xs={12}><Typography variant={'h6'} align={'left'} style={{height: '55px'}}>Message*</Typography></Grid>
+          <Grid container lg={12} spacing={3}>
+            <Grid item lg={2}>
+              <Grid item lg={12}><Typography variant={'h6'} align={'left'} style={{height: '55px'}}>Name*</Typography></Grid>
+              <Grid item lg={12}><Typography variant={'h6'} align={'left'} style={{height: '55px'}}>Contact Info*</Typography></Grid>
+              <Grid item lg={12}><Typography variant={'h6'} align={'left'} style={{height: '55px'}}>Message*</Typography></Grid>
             </Grid>
-            <Grid container xs={7}>
-              <Grid item xs={12}>
+            <Grid container lg={7}>
+              <Grid item lg={12}>
                 <TextField
                   required={true}
                   placeholder={'Enter your Name'}
@@ -99,7 +99,7 @@ function Contact() {
                   fullWidth={true}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid item lg={12}>
                 <TextField
                   required={true}
                   placeholder={'Your Contact info (i.e. email, phone number, etc.'}
@@ -110,7 +110,7 @@ function Contact() {
                   fullWidth={true}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid item lg={12}>
                 <TextField
                   required={true}
                   placeholder={'Enter a message'}
@@ -123,7 +123,7 @@ function Contact() {
                   fullWidth={true}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid item lg={12}>
                 <SubmitButton
                   fullWidth={true}
                   disabled={validateForm()}
@@ -133,7 +133,7 @@ function Contact() {
                 </SubmitButton>
               </Grid>
             </Grid>
-            <Grid item xs={3} style={{marginTop: '-15px'}}>
+            <Grid item lg={3} style={{marginTop: '-15px'}}>
               <Typography variant={'h6'} align="left">Contact Information</Typography>
               <Typography variant={'body1'} align="left">Ethan Tom</Typography>
               <Typography variant={'body1'} align="left">ethanchristophertom@gmail.com</Typography>
