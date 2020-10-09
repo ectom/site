@@ -49,6 +49,16 @@ export default function Projects() {
         className={classes.grid}
       >
         <CustomCard
+          title={'Disasters'}
+          description={'Displays Earthquakes filtered by date and magnitude. Information about the earthquake and a ' +
+          'visual minimap is displayed where each earthquake took place.'}
+          button1Text={'GitHub'}
+          button1Link={'https://www.github.com/ectom/disasters'}
+          button2Text={'Live Demo'}
+          button2Link={'https://ectom.github.io/disasters/'}
+          skills={['React', 'Node.js', 'Material UI', 'USGS API', 'React Leaflet']}
+        />
+        <CustomCard
           title={'Student Manager'}
           description={'Attendance app that helps manage flow of students.\n' +
           '            Logs when students check in and out. Notifies parents\n' +
@@ -65,9 +75,9 @@ export default function Projects() {
           'and this is my first React project, and through it, I am learning the usefulness and importance of ' +
           'reusable and custom components.'}
           button1Text={'Github'}
-          button1Link={'https://www.github.com/ectom/site'}
+          button1Link={'https://www.github.com/ectom/ectom.github.io'}
           button2Text={'Live Demo'}
-          button2Link={'https://ectom.github.io/site'}
+          button2Link={'https://ectom.github.io'}
           skills={['Javascript', 'React', 'Material UI', 'Node.js', 'Create React App', 'gh-pages']}
         />
         <CustomCard
