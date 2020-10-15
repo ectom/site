@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { makeStyles, ThemeProvider } from "@material-ui/core";
 import theme from "../styles";
 import Typography from "@material-ui/core/Typography";
+import Link from '../components/Link.js'
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 
@@ -40,6 +41,18 @@ const useStyles = makeStyles( {
     fontSize: '22px',
     color: '#f8f8ff',
   },
+  about:{
+    display: 'block',
+    margin: 'auto',
+    paddingBottom: '20px',
+  },
+  aboutInfo: {
+    display: 'inline-block',
+    textAlign: 'left',
+    minWidth: '400px',
+    maxWidth: '600px',
+    padding: '0 30px 0 30px',
+  },
 } );
 
 function About() {
@@ -63,21 +76,21 @@ function About() {
         }}/>
         <Typography variant={'h1'} style={{color: '#f8f8ff', paddingTop: '40vh'}}>Ethan Tom</Typography>
       </div>
-      <Grid className={classes.root} container lg={12} spacing={2}>
-        <Grid item lg={3}>
-          <img src={'./images/profile.jpg'} style={{height: '150px', borderRadius: '100px'}}/>
-        </Grid>
-        <Grid container lg={9}>
-          <Grid item className={classes.paper} lg={12}>
+      <Grid className={classes.root} container lg={12} >
+        <div id={'About'} className={classes.about}>  
+          <div className={classes.aboutInfo}>
             <Typography
-              id={'About'}
               style={{color: '#f8f8ff'}}
               variant={'h5'}
             >About Me</Typography>
-            <Typography variant={'body'}>
-              Hi there! My name is Ethan Tom. I am a Software Engineer based in San Francisco, CA, recently out of
-              college and coding bootcamp. I'm currently working two jobs, the first as a Quality Engineer at Planet Labs and  I build things for the web during my free time. I am proficient in Python and
-              Javascript along with experience with several corresponding frameworks.
+            <Typography variant={'body1'}>
+              Hi there! My name is Ethan Tom. I am a Software Engineer based in San Francisco, CA. 
+            </Typography>
+            <Typography variant={'body1'}>  
+              After graduating from <Link link='https://www.ucsc.edu' text ='UC Santa Cruz' />, I joined the Quality Engineering team at <Link link='https://www.planet.com' text='Planet Labs' /> where I test and automate many different projects in Python.
+            </Typography>  
+            <Typography variant={'body1'}>
+                I enjoy build things for the web during my free time, hoping to one day become a web developer
             </Typography>
             <Grid item lg={6}  style={{marginTop: '20px'}}>
               <Grid item lg={12}>
@@ -103,9 +116,11 @@ function About() {
                 </Typography>
               </Grid>
             </Grid>
-            
-          </Grid>
-        </Grid>
+          </div>
+          <div style={{display: 'inline-block'}}>
+            <img src={'./images/profile.jpg'} style={{height: '250px', borderRadius: '120px'}}/>
+          </div>
+        </div>
       </Grid>
     </>
   )
