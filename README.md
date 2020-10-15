@@ -1,6 +1,11 @@
 # My Portfolio 2.0
 Made with React and Material UI
 
+## Branches
+Development -> Master
+Development is the most up to date, working code
+Master is the build that Github Pages serves from
+
 ## Available Scripts
 
 In the project directory, you can run:

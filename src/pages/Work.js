@@ -31,7 +31,7 @@ export default function Work() {
                     cardLink={'https://www.planet.com'}
                 />
                 <CustomCard
-                    image={'./images/cinemalooplogo.jpg'}
+                    image={'./images/cinemalooplogo.jpeg'}
                     title={'Fullstack Developer (April 2020 - August 2020)'}
                     description={'Collaborated closely with senior developers to quickly build a MVP customer facing website in React. Worked closely with designers to create a pixel perfect frontend, identical to the designs. Planned and introduced libraries such as Material UI to make Frontend development faster and cleaner. Developed backend endpoints and database functions to connect users.'}
                     skills={['Javascript', 'Node', 'React', 'Express', 'MongoDB', 'Webpack', 'Material UI', 'Figma', 'Git', 'GitLab CI/CD', 'Code Review']}

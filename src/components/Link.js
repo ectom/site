@@ -16,9 +16,9 @@ class Link extends Component {
   render() {
     let linkStyle;
     if ( this.state.hover ) {
-      linkStyle = { textDecoration: 'none', color: '#262626' }
+      linkStyle = { textDecoration: 'none', color: '#e9ecef' }
     } else {
-      linkStyle = { textDecoration: 'none', color: '#F55A44' }
+      linkStyle = { textDecoration: 'none', color: '#fca311' }
     }
     return (
       <a style={linkStyle} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover} href={this.props.link}

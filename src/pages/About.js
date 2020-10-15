@@ -3,18 +3,30 @@ import { makeStyles, ThemeProvider } from "@material-ui/core";
 import theme from "../styles";
 import Typography from "@material-ui/core/Typography";
 import Link from '../components/Link.js'
-import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+
+// paletteTheme: {
+//   #f8f9fa,
+//   #e9ecef
+//   #dee2e6,
+//   #ced4da,
+//   #adb5bd,
+//   #6c757d,
+//   #495057,
+//   #343a40,
+//   #212529,
+//   #fca311,
+// }
 
 const useStyles = makeStyles( {
   root: {
     width: '100%',
     flexGrow: 1,
     overflow: 'hidden',
-    backgroundColor: '#4b4b4b',
-    padding: '3vh 0 3vh 0',
-    marginTop: '-2vh',
-    marginBottom: '2vh'
+    backgroundColor: '#212529',
+    padding: '30px 0 50px 0',
+    marginTop: '-20px',
+    marginBottom: '2'
   },
   grid: {
     margin: `${theme.spacing( 1 )}px auto`,
@@ -43,15 +55,16 @@ const useStyles = makeStyles( {
   },
   about:{
     display: 'block',
+
     margin: 'auto',
     paddingBottom: '20px',
   },
   aboutInfo: {
     display: 'inline-block',
     textAlign: 'left',
-    minWidth: '400px',
     maxWidth: '600px',
     padding: '0 30px 0 30px',
+    color: '#e9ecef',
   },
 } );
 
@@ -118,7 +131,7 @@ function About() {
             </Grid>
           </div>
           <div style={{display: 'inline-block'}}>
-            <img src={'./images/profile.jpg'} style={{height: '250px', borderRadius: '120px'}}/>
+            <img src={'./images/profile.jpg'} style={{marginLeft: '-20px', height: '250px', border:'3px solid #343a40', borderRadius: '120px', boxShadow: '20px 15px #495057'}}/>
           </div>
         </div>
       </Grid>
