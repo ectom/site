@@ -66,6 +66,9 @@ const useStyles = makeStyles( {
     padding: '0 30px 0 30px',
     color: '#e9ecef',
   },
+  p: {
+    marginBottom: '10px'
+  }
 } );
 
 function About() {
@@ -85,24 +88,24 @@ function About() {
           left: 0,
           bottom: 0,
           right: 0,
-          zIndex: -1,
+          zIndex: 0,
         }}/>
-        <Typography variant={'h1'} style={{color: '#f8f8ff', paddingTop: '40vh'}}>Ethan Tom</Typography>
+        <Typography variant={'h1'} style={{color: '#f8f8ff', paddingTop: '40vh', position: 'relative'}}>Ethan Tom</Typography>
       </div>
       <Grid className={classes.root} container lg={12} >
         <div id={'About'} className={classes.about}>  
           <div className={classes.aboutInfo}>
             <Typography
               style={{color: '#f8f8ff'}}
-              variant={'h5'}
+              variant={'h3'}
             >About Me</Typography>
-            <Typography variant={'body1'}>
+            <Typography variant={'body1'} className={classes.p}>
               Hi there! My name is Ethan Tom. I am a Software Engineer based in San Francisco, CA. 
             </Typography>
-            <Typography variant={'body1'}>  
+            <Typography variant={'body1'} className={classes.p}>  
               After graduating from <Link link='https://www.ucsc.edu' text ='UC Santa Cruz' />, I joined the Quality Engineering team at <Link link='https://www.planet.com' text='Planet Labs' /> where I test and automate many different projects in Python.
             </Typography>  
-            <Typography variant={'body1'}>
+            <Typography variant={'body1'} className={classes.p}>
                 I enjoy build things for the web during my free time, hoping to one day become a web developer
             </Typography>
             <Grid item lg={6}  style={{marginTop: '20px'}}>
@@ -130,7 +133,7 @@ function About() {
               </Grid>
             </Grid>
           </div>
-          <div style={{display: 'inline-block'}}>
+          <div style={{display: 'inline-block', verticalAlign: 'top', marginTop: '70px'}}>
             <img src={'./images/profile.jpg'} style={{marginLeft: '-20px', height: '250px', border:'3px solid #343a40', borderRadius: '120px', boxShadow: '20px 15px #495057'}}/>
           </div>
         </div>

@@ -10,7 +10,7 @@ const useStyles = makeStyles( {
     maxWidth: '800px',
     minWidth: '500px',
     textAlign: 'left',
-    background: '#F55A44',
+    background: '#fca311',
     color: 'white',
     marginBottom: 50
   },

@@ -6,6 +6,7 @@ import { styled } from '@material-ui/core/styles';
 const MyToolbar = styled( Toolbar )( {
   background: 'black',
   color: 'white',
+  paddingBottom: '12px',
 } );
 
 const NavLink = ( props ) => {

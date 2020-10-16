@@ -6,6 +6,7 @@ export default function Spacer( props ) {
   const classes = makeStyles( {
     space: {
       height: props.space + 'em',
+      backgroundColor: '#212529',
     },
   } )();
   return (
