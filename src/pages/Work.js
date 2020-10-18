@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Card, CardActionArea, CardMedia, CardContent, CardActions, Typography, Button } from '@material-ui/core';
-import { makeStyles } from "@material-ui/styles";
+import { Grid, Typography } from '@material-ui/core';
 import CustomCard from "../components/CustomCard";
 
 
@@ -8,7 +7,7 @@ export default function Work() {
 
   return (
     <>
-      <h1 id={'Experience'}>Work Experience</h1>
+      <Typography id={'Experience'} style={{color: '#f8f8ff'}} variant={'h3'}>Work Experience</Typography>
       <Grid
         container
         justify="center"

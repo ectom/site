@@ -1,7 +1,8 @@
-import React from 'react';
-import { Grid, makeStyles } from "@material-ui/core";
+import React, { useState } from 'react';
+import { Grid, Typography, makeStyles, Tabs, Tab, Box } from "@material-ui/core";
 import CustomCard from "../components/CustomCard";
 import theme from "../styles";
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles({
   root: {
@@ -34,6 +35,15 @@ const useStyles = makeStyles({
     fontSize: '22px',
     color: '',
   },
+  panel: {
+    flexGrow: 1,
+    backgroundColor: '#adb5bd',
+    display: 'flex',
+    height: '224',
+  },
+  tabs: {
+    borderRight: '1px solid #fca311'
+  }
 });
 
 export default function Projects() {
@@ -42,7 +52,7 @@ export default function Projects() {
   
   return (
     <>
-      <h1 id={'Projects'}>Projects</h1>
+      <Typography id={'Projects'} style={{color: '#f8f8ff'}} variant={'h3'}>Projects</Typography>
       <Grid
         container
         justify="center"

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, MuiThemeProvider, Button, styled, makeStyles } from "@material-ui/core";
 import theme from "../styles";
 import Paper from "@material-ui/core/Paper";
@@ -9,12 +9,28 @@ const useStyles = makeStyles( {
   paper: {
     paddingBottom: theme.spacing( 5 ),
     paddingTop: theme.spacing( 1 ),
-    backgroundColor: '#FAFAFA',
+    backgroundColor: '#212529',
+    color: '#e9ecef',
     maxWidth: '900px',
     minWidth: '500px',
     textAlign: 'left',
     fontSize: '18px',
   },
+  input: {
+    backgroundColor: '#adb5bd'
+  },
+  disabled: {
+    background: '#FDB849',
+  },
+  validated: {
+    background: '#fca311',
+  },
+  hidden: {
+    display: 'none',
+  },
+  show: {
+    display: 'block'
+  }
 } );
 
 function Contact() {
@@ -27,12 +43,36 @@ function Contact() {
   emailjs.init( 'user_I8kGakbBp8ZVLYmygKAB5' );
   
   const SubmitButton = styled( Button )( {
-    background: '#F55A44',
     color: 'white',
     margin: '3% 0 3% 0',
     padding: '2% 8% 2% 8%',
   } );
+
+  const ContactLabels = () => {
+
+    const [width, setWidth] = useState(window.innerWidth);
+    const breakpoint = 1280;
+
+    useEffect(() => {
+      const handleWindowResize = () => setWidth(window.innerWidth); console.log(width);
+      window.addEventListener("resize", handleWindowResize);
   
+      // Return a function from the effect that removes the event listener
+      return () => window.removeEventListener("resize", handleWindowResize);
+    }, []);
+
+    if( width < breakpoint ) {
+      return null;
+    }
+    return (
+      <Grid item lg={2}>
+        <Grid item lg={12}><Typography variant={'h6'} align={'left'} style={{ height: '55px', color: '#e9ecef' }}>Name*</Typography></Grid>
+        <Grid item lg={12}><Typography variant={'h6'} align={'left'} style={{ height: '55px', color: '#e9ecef' }}>Contact Info*</Typography></Grid>
+        <Grid item lg={12}><Typography variant={'h6'} align={'left'} style={{ height: '55px', color: '#e9ecef' }}>Message*</Typography></Grid>
+      </Grid>
+    );
+  };  
+
   const handleNameChange = ( e ) => {
     setContactName( e.target.value );
   };
@@ -48,7 +88,6 @@ function Contact() {
   
   const validateForm = () => {
     return !( contactName && contactInfo && message );
-    
   };
   
   const clearContactForm = () => {
@@ -73,7 +112,7 @@ function Contact() {
   return (
     <>
       <MuiThemeProvider theme={theme}>
-        <h1 id={'Contact'}>Contact Me</h1>
+        <Typography id={'Contact'} style={{color: '#f8f8ff'}} variant={'h3'}>Contact Me</Typography>
         <Container component="div" maxWidth="md">
           <Paper className={classes.paper} elevation={0}>
             I'm always looking for new opportunities to learn new things and improve my own skills. If you want to work
@@ -82,18 +121,15 @@ function Contact() {
           </Paper>
           
           <Grid container lg={12} spacing={3}>
-            <Grid item lg={2}>
-              <Grid item lg={12}><Typography variant={'h6'} align={'left'} style={{height: '55px'}}>Name*</Typography></Grid>
-              <Grid item lg={12}><Typography variant={'h6'} align={'left'} style={{height: '55px'}}>Contact Info*</Typography></Grid>
-              <Grid item lg={12}><Typography variant={'h6'} align={'left'} style={{height: '55px'}}>Message*</Typography></Grid>
-            </Grid>
-            <Grid container lg={7}>
+            <ContactLabels />
+            <Grid container lg={7} style={{display: 'block'}}>
               <Grid item lg={12}>
                 <TextField
                   required={true}
                   placeholder={'Enter your Name'}
                   value={contactName}
                   onChange={( e ) => handleNameChange( e )}
+                  InputProps={{className: classes.input}}
                   style={{ display: 'block' }}
                   variant={'outlined'}
                   fullWidth={true}
@@ -102,18 +138,19 @@ function Contact() {
               <Grid item lg={12}>
                 <TextField
                   required={true}
-                  placeholder={'Your Contact info (i.e. email, phone number, etc.'}
+                  placeholder={'Your Contact info (i.e. email, phone number, etc.)'}
                   value={contactInfo}
                   onChange={( e ) => handleInfoChange( e )}
                   style={{ display: 'block' }}
                   variant={'outlined'}
                   fullWidth={true}
+                  InputProps={{className: classes.input}}
                 />
               </Grid>
               <Grid item lg={12}>
                 <TextField
                   required={true}
-                  placeholder={'Enter a message'}
+                  placeholder={'A message for Ethan'}
                   value={message}
                   multiline={true}
                   rows={5}
@@ -121,23 +158,25 @@ function Contact() {
                   style={{ display: 'block' }}
                   variant={'outlined'}
                   fullWidth={true}
+                  InputProps={{className: classes.input}}
                 />
               </Grid>
-              <Grid item lg={12}>
+              <Grid item lg={12} style={{display: 'block'}}>
                 <SubmitButton
                   fullWidth={true}
                   disabled={validateForm()}
+                  className={validateForm() ? classes.disabled : classes.validated}
                   onClick={sendEmail}
                 >
                   Say Hello
-                </SubmitButton>
+                </SubmitButton >
               </Grid>
             </Grid>
             <Grid item lg={3} style={{marginTop: '-15px'}}>
-              <Typography variant={'h6'} align="left">Contact Information</Typography>
-              <Typography variant={'body1'} align="left">Ethan Tom</Typography>
-              <Typography variant={'body1'} align="left">ethanchristophertom@gmail.com</Typography>
-              <Typography variant={'body1'} align="left">San Francisco, CA 94118</Typography>
+              <Typography variant={'h6'} align="left" style={{ color: '#e9ecef' }}>Contact Information</Typography>
+              <Typography variant={'body1'} align="left" style={{ color: '#e9ecef' }}>Ethan Tom</Typography>
+              <Typography variant={'body1'} align="left" style={{ color: '#e9ecef' }}>ethanchristophertom@gmail.com</Typography>
+              <Typography variant={'body1'} align="left" style={{ color: '#e9ecef' }}>San Francisco, CA 94118</Typography>
             </Grid>
           </Grid>
         </Container>

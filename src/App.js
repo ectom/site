@@ -20,11 +20,11 @@ export default function App() {
         <About/>
         <Spacer space={5}/>
         <Work/>
-        <Spacer space={10}/>
+        <Spacer space={5}/>
         <Projects/>
-        <Spacer space={10}/>
+        <Spacer space={5}/>
         <Education/>
-        <Spacer space={10}/>
+        <Spacer space={5}/>
         <Contact/>
         <Spacer space={5}/>
         <Social/>
