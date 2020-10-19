@@ -8,7 +8,6 @@ const useStyles = makeStyles( {
   
   card: {
     maxWidth: '800px',
-    minWidth: '500px',
     textAlign: 'left',
     background: '#fca311',
     color: 'white',

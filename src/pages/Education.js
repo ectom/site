@@ -20,7 +20,6 @@ const useStyles = makeStyles( {
     padding: theme.spacing( 5 ),
     backgroundColor: '#FAFAFA',
     maxWidth: '900px',
-    minWidth: '500px',
     textAlign: 'left',
     fontSize: '18px',
   },

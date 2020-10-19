@@ -12,7 +12,6 @@ const useStyles = makeStyles( {
     backgroundColor: '#212529',
     color: '#e9ecef',
     maxWidth: '900px',
-    minWidth: '500px',
     textAlign: 'left',
     fontSize: '18px',
   },
