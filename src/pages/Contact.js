@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, MuiThemeProvider, Button, styled, makeStyles } from "@material-ui/core";
+import { Container, MuiThemeProvider, Button, styled, makeStyles, withStyles } from "@material-ui/core";
 import theme from "../styles";
 import Paper from "@material-ui/core/Paper";
 import { TextField, FormControl, FormLabel, Grid, Typography } from '@material-ui/core';
@@ -17,10 +17,12 @@ const useStyles = makeStyles( {
     fontSize: '18px',
   },
   input: {
-    backgroundColor: '#adb5bd'
+    backgroundColor: '#adb5bd',
+    borderColor: '#212529',
   },
   disabled: {
-    background: '#FDB849',
+    background: '#495057',
+    color: 'green',
   },
   validated: {
     background: '#fca311',
@@ -32,6 +34,19 @@ const useStyles = makeStyles( {
     display: 'block'
   }
 } );
+
+const ContactInput = withStyles({
+  root: {
+    '& .MuiOutlinedInput-root': {
+      '&:hover fieldset': {
+        borderColor: '#5B6671',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: '#212529',
+      },
+    },
+  }
+})(TextField)
 
 function Contact() {
   const [contactName, setContactName] = useState( '' );
@@ -124,7 +139,7 @@ function Contact() {
             <ContactLabels />
             <Grid container lg={7} style={{display: 'block'}}>
               <Grid item lg={12}>
-                <TextField
+                <ContactInput
                   required={true}
                   placeholder={'Enter your Name'}
                   value={contactName}
@@ -136,7 +151,7 @@ function Contact() {
                 />
               </Grid>
               <Grid item lg={12}>
-                <TextField
+                <ContactInput
                   required={true}
                   placeholder={'Your Contact info (i.e. email, phone number, etc.)'}
                   value={contactInfo}
@@ -148,7 +163,7 @@ function Contact() {
                 />
               </Grid>
               <Grid item lg={12}>
-                <TextField
+                <ContactInput
                   required={true}
                   placeholder={'A message for Ethan'}
                   value={message}

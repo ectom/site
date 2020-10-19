@@ -11,16 +11,16 @@ class Social extends Component {
   
   render() {
     const GitHub = styled( GitHubIcon )( {
-      color: '#F55A44'
+      color: '#fca311'
     } );
     const LinkedIn = styled( LinkedInIcon )( {
-      color: '#F55A44'
+      color: '#fca311'
     } );
     const Instagram = styled( InstagramIcon )( {
-      color: '#F55A44'
+      color: '#fca311'
     } );
     const Email = styled( EmailIcon )( {
-      color: '#F55A44'
+      color: '#fca311'
     } );
     
     return (
@@ -35,7 +35,6 @@ class Social extends Component {
             href="https://www.github.com/ectom"
             target="_blank"
             rel="noopener"
-          
           >
             <GitHub fontSize="large"/>
           </Link>

@@ -65,7 +65,7 @@ export default function Education() {
                   I discovered my passion to develop things to be used by other people.
                 </Typography>
               </Paper>
-              <Paper className={classes.paper} item elevation={0}>
+              <Paper className={classes.paper} style={{marginTop: '-5px'}} item elevation={0}>
                 <Typography className={classes.subtitle1}>
                   <strong>Coding Dojo</strong>
                 </Typography>

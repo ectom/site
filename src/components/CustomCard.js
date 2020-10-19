@@ -21,7 +21,7 @@ const useStyles = makeStyles( {
     color: 'white',
   },
   button: {
-    background: '#F56C5A',
+    background: '#495057',
     color: 'white',
   },
   skills: {
