@@ -34,28 +34,24 @@ class Social extends Component {
           <Link
             href="https://www.github.com/ectom"
             target="_blank"
-            rel="noopener"
           >
             <GitHub fontSize="large"/>
           </Link>
           <Link
             href="https://www.linkedin.com/in/ectom"
             target="_blank"
-            rel="noopener"
           >
             <LinkedIn fontSize="large"/>
           </Link>
           <Link
             href="https://www.instagram.com/ethantom_"
             target="_blank"
-            rel="noopener"
           >
             <Instagram fontSize="large"/>
           </Link>
           <Link
             href={`mailto:?ethanchristophertom@gmail.com`}
             target="_blank"
-            rel="noopener"
           >
             <Email fontSize="large"/>
           </Link>

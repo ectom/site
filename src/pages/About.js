@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { makeStyles, ThemeProvider } from "@material-ui/core";
+import React from 'react';
+import { makeStyles } from "@material-ui/core";
 import theme from "../styles";
 import Typography from "@material-ui/core/Typography";
 import Link from '../components/Link.js'
@@ -134,7 +134,7 @@ function About() {
             </Grid>
           </div>
           <div style={{display: 'inline-block', verticalAlign: 'top', marginTop: '70px'}}>
-            <img src={'./images/profile.jpg'} style={{marginLeft: '-20px', height: '250px', border:'3px solid #343a40', borderRadius: '120px', boxShadow: '20px 15px #495057'}}/>
+            <img src={'./images/profile.jpg'} alt='Profile Pic' style={{marginLeft: '-20px', height: '250px', border:'3px solid #343a40', borderRadius: '120px', boxShadow: '20px 15px #495057'}}/>
           </div>
         </div>
       </Grid>

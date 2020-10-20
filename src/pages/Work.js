@@ -1,9 +1,23 @@
-import React, { Component } from 'react';
-import { Grid, Typography } from '@material-ui/core';
+import React from 'react';
+import { Grid, Typography, makeStyles } from '@material-ui/core';
 import CustomCard from "../components/CustomCard";
+import theme from "../styles";
 
+const useStyles = makeStyles({
+  root: {
+    width: '100%',
+    flexGrow: 1,
+    overflow: 'hidden',
+  },
+  grid: {
+    margin: `${theme.spacing( 1 )}px auto`,
+    maxWidth: '900px',
+  },
+})
 
-export default function Work() {
+const Work = () => {
+
+  const classes = useStyles();
 
   return (
     <>
@@ -11,6 +25,7 @@ export default function Work() {
       <Grid
         container
         justify="center"
+        className={classes.grid}
       >
         <CustomCard
           image={'./images/planetlogo.jpg'}
@@ -40,6 +55,8 @@ export default function Work() {
     </>
   )
 }
+
+export default Work;
 
 //    TODO use MUI Expansion Panels for work and Cards for Projects
 

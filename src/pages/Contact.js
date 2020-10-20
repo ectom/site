@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, MuiThemeProvider, Button, styled, makeStyles, withStyles } from "@material-ui/core";
 import theme from "../styles";
 import Paper from "@material-ui/core/Paper";
-import { TextField, FormControl, FormLabel, Grid, Typography } from '@material-ui/core';
+import { TextField, Grid, Typography } from '@material-ui/core';
 import emailjs from 'emailjs-com';
 
 const useStyles = makeStyles( {
@@ -47,7 +47,7 @@ const ContactInput = withStyles({
   }
 })(TextField)
 
-function Contact() {
+const Contact = () => {
   const [contactName, setContactName] = useState( '' );
   const [contactInfo, setContactInfo] = useState( '' );
   const [message, setMessage] = useState( '' );
@@ -68,10 +68,8 @@ function Contact() {
     const breakpoint = 1280;
 
     useEffect(() => {
-      const handleWindowResize = () => setWidth(window.innerWidth); console.log(width);
+      const handleWindowResize = () => setWidth(window.innerWidth);
       window.addEventListener("resize", handleWindowResize);
-  
-      // Return a function from the effect that removes the event listener
       return () => window.removeEventListener("resize", handleWindowResize);
     }, []);
 

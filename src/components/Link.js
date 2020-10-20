@@ -22,7 +22,7 @@ class Link extends Component {
     }
     return (
       <a style={linkStyle} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover} href={this.props.link}
-         target={'_blank'}>{this.props.text}</a>
+         target={'_blank'} rel="noopener noreferrer">{this.props.text}</a>
     );
   }
 }

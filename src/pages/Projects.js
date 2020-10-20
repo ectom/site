@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { Grid, Typography, makeStyles, Tabs, Tab, Box } from "@material-ui/core";
+import React from 'react';
+import { Grid, Typography, makeStyles } from "@material-ui/core";
 import CustomCard from "../components/CustomCard";
 import theme from "../styles";
-import PropTypes from 'prop-types';
 
 const useStyles = makeStyles({
   root: {
@@ -46,7 +45,7 @@ const useStyles = makeStyles({
   }
 });
 
-export default function Projects() {
+const Projects = () => {
   
   const classes = useStyles();
   
@@ -112,3 +111,5 @@ export default function Projects() {
     </>
   )
 }
+
+export default Projects;
