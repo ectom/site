@@ -132,9 +132,9 @@ const Contact = () => {
             connections please send me an email and I'll do my best to get back to you as soon as possible.
           </Paper>
           
-          <Grid container lg={12} spacing={3}>
+          <Grid container spacing={3}>
             <ContactLabels />
-            <Grid container lg={7} style={{display: 'block'}}>
+            <Grid container style={{display: 'block'}}>
               <Grid item lg={12}>
                 <ContactInput
                   required={true}

@@ -49,14 +49,14 @@ export default function Education() {
         <div className={classes.root}>
           <Grid container wrap="nowrap" spacing={2}>
             <Grid container className={classes.grid}>
-              <Paper className={classes.paper} item elevation={0}>
+              <Paper className={classes.paper}>
                 <Typography className={classes.subtitle1}>
                   <strong>University of California, Santa Cruz</strong>
                 </Typography>
                 <Typography className={classes.subtitle2}>
                   <i>Bachelors of Science, Computer Science | Class of 2019</i>
                 </Typography>
-                <Typography variant={'body'}>
+                <Typography variant={'body1'}>
                   I graduated from UC Santa Cruz with a B.S. in Computer Science.
                   Throughout my four years in college, I participated in many extracurriculars
                   and leadership positions, such as being a Student Outreach Leader, Kyrie Christian
@@ -64,7 +64,7 @@ export default function Education() {
                   I discovered my passion to develop things to be used by other people.
                 </Typography>
               </Paper>
-              <Paper className={classes.paper} style={{marginTop: '-5px'}} item elevation={0}>
+              <Paper className={classes.paper} style={{marginTop: '-5px'}}>
                 <Typography className={classes.subtitle1}>
                   <strong>Coding Dojo</strong>
                 </Typography>
@@ -74,7 +74,7 @@ export default function Education() {
                     link={'https://www.codingdojo.com/what-is-python-programming'}
                     text={'Python Stack'}/> (Django/Flask)</i>
                 </Typography>
-                <Typography variant={'body'}>
+                <Typography variant={'body1'}>
                   Over the summer of 2017, I spent 70-90 hours a week at the Silicon Valley Coding Dojo location. There
                   I
                   earned the highest certifications in MongoDB, Express, Angular, and Node.js (MEAN) Stack development

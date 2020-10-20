@@ -92,7 +92,7 @@ function About() {
         }}/>
         <Typography variant={'h1'} style={{color: '#f8f8ff', paddingTop: '40vh', position: 'relative'}}>Ethan Tom</Typography>
       </div>
-      <Grid className={classes.root} container lg={12} >
+      <Grid className={classes.root} container >
         <div id={'About'} className={classes.about}>  
           <div className={classes.aboutInfo}>
             <Typography
@@ -117,17 +117,17 @@ function About() {
                 >Contact Information</Typography>
               </Grid>
               <Grid item lg={12}>
-                <Typography variant={'body'}>
+                <Typography variant={'body2'}>
                   Ethan Tom
                 </Typography>
               </Grid>
               <Grid item lg={12}>
-                <Typography variant={'body'}>
+                <Typography variant={'body2'}>
                   ethanchristophertom@gmail.com
                 </Typography>
               </Grid>
               <Grid item lg={12}>
-                <Typography variant={'body'}>
+                <Typography variant={'body2'}>
                   San Francisco, CA
                 </Typography>
               </Grid>

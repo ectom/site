@@ -52,11 +52,11 @@ function CustomCard( props ) {
   }
   
   
-  function skills() {
+  const skills = () => {
     if ( props.skills ) {
       const skills = props.skills;
-      const listSkills = skills.map( ( skill ) =>
-        <li>{skill}</li>
+      const listSkills = skills.map( ( skill, index ) =>
+        <li key={`${props.title}-${skill}-${index}`}>{skill}</li>
       );
       return (
         <>
@@ -66,9 +66,9 @@ function CustomCard( props ) {
         </>
       );
     }
-  }
+  };
   
-  function renderButton( buttonLink, buttonText ) {
+  const renderButton = ( buttonLink, buttonText ) => {
     if ( buttonLink && buttonText ) {
       return (
         <Button
@@ -81,7 +81,7 @@ function CustomCard( props ) {
         </Button>
       )
     }
-  }
+  };
   
   return (
     <>
