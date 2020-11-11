@@ -1,0 +1,13 @@
+{
+	"line1": "Hi there! My name is Ethan Tom. I am a Software Engineer based in San Francisco, CA.",
+	"line2": {
+		"part1": "After graduating from ",
+		"linkUrl1": "https://www.ucsc.edu",
+		"linkText1": "UC Santa Cruz",
+		"part2": ", I joined the Quality Engineering team at ",
+		"linkUrl2": "https://www.planet.com",
+		"linkText2": "Planet Labs",
+		"part3": " where I test and automate many different projects in Python."
+	},
+	"line3": "I enjoy build things for the web during my free time, hoping to one day become a web developer"
+}

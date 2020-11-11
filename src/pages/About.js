@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import theme from '../styles';
 import Link from '../components/Link.js';
+import data from '../data/about.json';
 
 // paletteTheme: {
 //   #f8f9fa,
@@ -102,20 +103,17 @@ function About() {
               About Me
 						</Typography>
 						<Typography variant="body1" className={classes.p}>
-              Hi there! My name is Ethan Tom. I am a Software Engineer based in San Francisco, CA.
+              {data.line1}
 						</Typography>
 						<Typography variant="body1" className={classes.p}>
-              After graduating from
-							{' '}
-							<Link link="https://www.ucsc.edu" text="UC Santa Cruz" />
-              , I joined the Quality Engineering team at
-							{' '}
-							<Link link="https://www.planet.com" text="Planet Labs" />
-							{' '}
-              where I test and automate many different projects in Python.
+              {data.line2.part1}
+							<Link link={data.line2.linkUrl1} text={data.line2.linkText1} />
+              {data.line2.part2}
+							<Link link={data.line2.linkUrl2} text={data.line2.linkText2} />
+              {data.line2.part3}
 						</Typography>
 						<Typography variant="body1" className={classes.p}>
-              I enjoy build things for the web during my free time, hoping to one day become a web developer
+							{data.line3}
 						</Typography>
 						<Grid item lg={6} style={{ marginTop: '20px' }}>
 							<Grid item lg={12}>
