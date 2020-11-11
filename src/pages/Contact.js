@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import {
 	Container, MuiThemeProvider, Button, styled, makeStyles, withStyles,
-	TextField, Grid, Typography } from '@material-ui/core';
+	TextField, Grid, Typography
+} from '@material-ui/core';
 import Paper from "@material-ui/core/Paper";
 
 import emailjs from 'emailjs-com';
@@ -64,28 +65,6 @@ const Contact = () => {
 		padding: '2% 8% 2% 8%',
 	});
 
-	const ContactLabels = () => {
-		const [width, setWidth] = useState(window.innerWidth);
-		const breakpoint = 1280;
-
-		useEffect(() => {
-			const handleWindowResize = () => setWidth(window.innerWidth);
-			window.addEventListener('resize', handleWindowResize);
-			return () => window.removeEventListener('resize', handleWindowResize);
-		}, []);
-
-		if (width < breakpoint) {
-			return null;
-		}
-		return (
-			<Grid item lg={2}>
-				<Grid item lg={12}><Typography variant="h6" align="left" style={{ height: '55px', color: '#e9ecef' }}>Name*</Typography></Grid>
-				<Grid item lg={12}><Typography variant="h6" align="left" style={{ height: '55px', color: '#e9ecef' }}>Contact Info*</Typography></Grid>
-				<Grid item lg={12}><Typography variant="h6" align="left" style={{ height: '55px', color: '#e9ecef' }}>Message*</Typography></Grid>
-			</Grid>
-		);
-	};
-
 	const handleNameChange = (e) => {
 		setContactName(e.target.value);
 	};
@@ -115,7 +94,7 @@ const Contact = () => {
 			console.log('SUCCESS!', response.status, response.text);
 		}, (err) => {
 			console.log('FAILED...', err);
-		},).then(clearContactForm);
+		}).then(clearContactForm);
 	};
 
 	return (
@@ -124,13 +103,12 @@ const Contact = () => {
 				<Typography id="Contact" style={{ color: '#f8f8ff' }} variant="h3">Contact Me</Typography>
 				<Container component="div" maxWidth="md">
 					<Paper className={classes.paper} elevation={0}>
-  I&apos;m always looking for new opportunities to learn new things and improve my own skills. If you want to work
-  with me, teach me something new, suggest improvements to any of my code, or just want to make networking
-  connections please send me an email and I&apos;ll do my best to get back to you as soon as possible.
+						I&apos;m always looking for new opportunities to learn new things and improve my own skills. If you want to work
+						with me, teach me something new, suggest improvements to any of my code, or just want to make networking
+						connections please send me an email and I&apos;ll do my best to get back to you as soon as possible.
 					</Paper>
 
 					<Grid container spacing={3}>
-						<ContactLabels />
 						<Grid container style={{ display: 'block' }}>
 							<Grid item lg={12}>
 								<ContactInput
@@ -177,7 +155,7 @@ const Contact = () => {
 									className={validateForm() ? classes.disabled : classes.validated}
 									onClick={sendEmail}
 								>
-  Say Hello
+									Say Hello
 								</SubmitButton>
 							</Grid>
 						</Grid>
