@@ -103,14 +103,14 @@ function About() {
               About Me
 						</Typography>
 						<Typography variant="body1" className={classes.p}>
-              {data.line1}
+							{data.line1}
 						</Typography>
 						<Typography variant="body1" className={classes.p}>
-              {data.line2.part1}
+							{data.line2.part1}
 							<Link link={data.line2.linkUrl1} text={data.line2.linkText1} />
-              {data.line2.part2}
+							{data.line2.part2}
 							<Link link={data.line2.linkUrl2} text={data.line2.linkText2} />
-              {data.line2.part3}
+							{data.line2.part3}
 						</Typography>
 						<Typography variant="body1" className={classes.p}>
 							{data.line3}
