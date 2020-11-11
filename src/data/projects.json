@@ -16,6 +16,39 @@
 			]
 		},
 		{
+			"title": "Portfolio Website 2.0",
+			"description": "My second and current attempt at a personal website, created to display the various projects and places I've worked. This is webpage is built with React from the Create React App template and Material UI. I self-taught myself React and this is my first React project, and through it, I am learning the usefulness and importance of reusable and custom components.",
+			"button1Text": "GitHub",
+			"button1Link": "https://www.github.com/ectom/ectom.github.io",
+			"button2Text": "Live Demo",
+			"button2Link": "https://ectom.github.io",
+			"skills": [
+				"Javascript",
+				"React",
+				"Material UI",
+				"Node.js",
+				"Create React App",
+				"Github Pages",
+				"Eslint",
+				"Travis CI"
+			]
+		},
+		{
+			"title": "Spotify Sleep Cycle",
+			"description": "A React Native mobile app for Spotify and alarm integration. If you are tired of normal alarm sounds, this will let you wake up to a Spotify playlist. This app is still in development, but I am continuously working on it",
+			"button1Text": "GitHub",
+			"button1Link": "https://www.github.com/ectom/SpotifySleepCycle",
+			"skills": [
+				"React",
+				"React Native",
+				"Spotify API",
+				"Javascript",
+				"Node.js",
+				"Eslint",
+				"Travis CI"
+			]
+		},
+		{
 			"title": "Student Manager",
 			"description": "Attendance app that helps manage flow of students. Logs when students check in and out. Notifies parents when students have checked out via email or text",
 			"button1Text": "GitHub",
@@ -31,34 +64,18 @@
 			]
 		},
 		{
-			"title": "Portfolio Website 2.0",
-			"description": "My second and current attempt at a personal website, created to display the various projects and places I've worked. This is webpage is built with React from the Create React App template and Material UI. I self-taught myself React and this is my first React project, and through it, I am learning the usefulness and importance of reusable and custom components.",
+			"title": "Portfolio Website 1.0",
+			"description": "My first attempt at a personal website. This is a full stack portfolio web app using MEAN stack. I went a bit overkill by adding a backend database and Node server to control the contact form and store data of messages. It is organized according to standard MVC patterns.",
 			"button1Text": "GitHub",
-			"button1Link": "https://www.github.com/ectom/ectom.github.io",
-			"button2Text": "Live Demo",
-			"button2Link": "https://ectom.github.io",
+			"button1Link": "https://www.github.com/ectom/sitev1",
 			"skills": [
-				"Javascript",
-				"React",
-				"Material UI",
+				"Angular",
+				"MongoDB",
+				"Express",
 				"Node.js",
-				"Create React App",
-				"gh-pages"
+				"MVC Framework",
+				"Nodemailer"
 			]
-		},
-		{
-			"title": "",
-			"description": "",
-			"button1Text": "GitHub",
-			"button1Link": "",
-			"skills": []
-		},
-		{
-			"title": "",
-			"description": "",
-			"button1Text": "GitHub",
-			"button1Link": "",
-			"skills": []
 		}
 	]
 }

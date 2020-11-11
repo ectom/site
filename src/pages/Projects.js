@@ -71,24 +71,6 @@ const Projects = () => {
 						/>
 					)
 				})}
-				<CustomCard
-					title="TakeAPoll"
-					description={'A React Native mobile app where users can create polls for other users to anonymously vote '
-          + 'on. There will be settings such as polls by location, interest, demographic, etc. This app is still in '
-          + 'development, but I am continuously working on it '}
-					button1Text="Github"
-					button1Link="https://www.github.com/ectom/TakeAPoll"
-					skills={['React', 'React Native', 'Google Sheets API', 'Javascript', 'Node.js']}
-				/>
-				<CustomCard
-					title="Portfolio Website 1.0"
-					description={'My first attempt at a personal website. This is a full stack portfolio web app using MEAN '
-          + 'stack. I went a bit overkill by adding a backend database and Node server to control the contact form and '
-          + 'store data of messages. It is organized according to standard MVC patterns.'}
-					button1Text="Github"
-					button1Link="https://www.github.com/ectom/sitev1"
-					skills={['Angular', 'MongoDB', 'Express', 'Node.js', 'MVC Framework', 'Nodemailer']}
-				/>
 			</Grid>
 		</>
 	);
