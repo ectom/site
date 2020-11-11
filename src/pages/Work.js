@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Typography, makeStyles } from '@material-ui/core';
-import CustomCard from "../components/CustomCard";
-import theme from "../styles";
+import CustomCard from '../components/CustomCard';
+import theme from '../styles';
 
 const useStyles = makeStyles({
   root: {
@@ -10,51 +10,50 @@ const useStyles = makeStyles({
     overflow: 'hidden',
   },
   grid: {
-    margin: `${theme.spacing( 1 )}px auto`,
+    margin: `${theme.spacing(1)}px auto`,
     maxWidth: '900px',
   },
-})
+});
 
 const Work = () => {
-
   const classes = useStyles();
 
   return (
     <>
-      <Typography id={'Experience'} style={{color: '#f8f8ff'}} variant={'h3'}>Work Experience</Typography>
+      <Typography id="Experience" style={{ color: '#f8f8ff' }} variant="h3">Work Experience</Typography>
       <Grid
         container
         justify="center"
         className={classes.grid}
       >
         <CustomCard
-          image={'./images/planetlogo.jpg'}
-          title={'Software Engineer in Test, Intern (June 2019 - Present)'}
-          description={'I was hired right out of college and have been working at Planet since then. My responsibilities ' +
-            'include designing and developing automated test cases in Cypress (Javascript), PyTest, and Selenium (Python). I ' +
-            'write tests that run in a nightly regression pipeline and tests that run with every new push on both staging ' +
-            'and production platforms. My tests help developers debug issues faster by offering more specific and helpful ' +
-            'error messages that show where problems occur in the code. The Cypress tests are in Javascript and are mostly ' +
-            'stubbed to test web features in a controlled environment also known as a unit test. The PyTest and Selenium Webdriver tests ' +
-            'I write are in Python 3. These are end to end tests which point out where there are failures in the code. ' +
-            'For this job I have to be very detail oriented and thorough in order to streamline the development process, ' +
-            'as I work very closely with the developers and attend biweekly standups, sprint planning meetings and ' +
-            'retrospectives. Since working at Planet, I have become much more comfortable diving into and understanding ' +
-            'different code bases, as I am often switched around between various projects.'}
+          image="./images/planetlogo.jpg"
+          title="Software Engineer in Test, Intern (June 2019 - Present)"
+          description={'I was hired right out of college and have been working at Planet since then. My responsibilities '
+            + 'include designing and developing automated test cases in Cypress (Javascript), PyTest, and Selenium (Python). I '
+            + 'write tests that run in a nightly regression pipeline and tests that run with every new push on both staging '
+            + 'and production platforms. My tests help developers debug issues faster by offering more specific and helpful '
+            + 'error messages that show where problems occur in the code. The Cypress tests are in Javascript and are mostly '
+            + 'stubbed to test web features in a controlled environment also known as a unit test. The PyTest and Selenium Webdriver tests '
+            + 'I write are in Python 3. These are end to end tests which point out where there are failures in the code. '
+            + 'For this job I have to be very detail oriented and thorough in order to streamline the development process, '
+            + 'as I work very closely with the developers and attend biweekly standups, sprint planning meetings and '
+            + 'retrospectives. Since working at Planet, I have become much more comfortable diving into and understanding '
+            + 'different code bases, as I am often switched around between various projects.'}
           skills={['Python', 'Javascript', 'React', 'Cypress', 'Selenium', 'PyTest', 'Git', 'Jira', 'GitLab CI/CD', 'End-to-end testing', 'Automation', 'Code Review']}
-          cardLink={'https://www.planet.com'}
+          cardLink="https://www.planet.com"
         />
         <CustomCard
-          image={'./images/cinemalooplogo.jpeg'}
-          title={'Fullstack Developer (April 2020 - August 2020)'}
-          description={'Collaborated closely with senior developers to quickly build a MVP customer facing website in React. Worked closely with designers to create a pixel perfect frontend, identical to the designs. Planned and introduced libraries such as Material UI to make Frontend development faster and cleaner. Developed backend endpoints and database functions to connect users.'}
+          image="./images/cinemalooplogo.jpeg"
+          title="Fullstack Developer (April 2020 - August 2020)"
+          description="Collaborated closely with senior developers to quickly build a MVP customer facing website in React. Worked closely with designers to create a pixel perfect frontend, identical to the designs. Planned and introduced libraries such as Material UI to make Frontend development faster and cleaner. Developed backend endpoints and database functions to connect users."
           skills={['Javascript', 'Node', 'React', 'Express', 'MongoDB', 'Webpack', 'Material UI', 'Figma', 'Git', 'GitLab CI/CD', 'Code Review']}
-          cardLink={'https://www.cinemaloop.co'}
+          cardLink="https://www.cinemaloop.co"
         />
       </Grid>
     </>
-  )
-}
+  );
+};
 
 export default Work;
 

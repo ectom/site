@@ -6,58 +6,56 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import EmailIcon from '@material-ui/icons/Email';
 
-
 class Social extends Component {
-  
   render() {
-    const GitHub = styled( GitHubIcon )( {
-      color: '#fca311'
-    } );
-    const LinkedIn = styled( LinkedInIcon )( {
-      color: '#fca311'
-    } );
-    const Instagram = styled( InstagramIcon )( {
-      color: '#fca311'
-    } );
-    const Email = styled( EmailIcon )( {
-      color: '#fca311'
-    } );
-    
+    const GitHub = styled(GitHubIcon)({
+      color: '#fca311',
+    });
+    const LinkedIn = styled(LinkedInIcon)({
+      color: '#fca311',
+    });
+    const Instagram = styled(InstagramIcon)({
+      color: '#fca311',
+    });
+    const Email = styled(EmailIcon)({
+      color: '#fca311',
+    });
+
     return (
-//            TODO add spacing to icons
+    //            TODO add spacing to icons
       <>
         <Grid
           container
-          direction={"row"}
+          direction="row"
           justify="center"
         >
           <Link
             href="https://www.github.com/ectom"
             target="_blank"
           >
-            <GitHub fontSize="large"/>
+            <GitHub fontSize="large" />
           </Link>
           <Link
             href="https://www.linkedin.com/in/ectom"
             target="_blank"
           >
-            <LinkedIn fontSize="large"/>
+            <LinkedIn fontSize="large" />
           </Link>
           <Link
             href="https://www.instagram.com/ethantom_"
             target="_blank"
           >
-            <Instagram fontSize="large"/>
+            <Instagram fontSize="large" />
           </Link>
           <Link
-            href={`mailto:?ethanchristophertom@gmail.com`}
+            href="mailto:?ethanchristophertom@gmail.com"
             target="_blank"
           >
-            <Email fontSize="large"/>
+            <Email fontSize="large" />
           </Link>
         </Grid>
       </>
-    )
+    );
   }
 }
 

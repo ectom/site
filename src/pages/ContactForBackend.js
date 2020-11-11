@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import { Container, TextField, Button, styled, createMuiTheme, MuiThemeProvider } from "@material-ui/core";
+import React, { Component, setState } from 'react';
+import {
+  Container, TextField, Button, styled, createMuiTheme, MuiThemeProvider,
+} from '@material-ui/core';
 
 // TODO add thank you in place of form in the future
 
 class Contact extends Component {
-  
   state = {
     name: '',
     email: '',
@@ -13,75 +14,74 @@ class Contact extends Component {
     emailValid: false,
     submitDisabled: true,
   }
-  
-  validateEmail( e ) {
-    console.log( e.target.value )
-    if ( this.state.name.length > 3 && this.state.email.length > 5 && this.state.message.length > 20 && this.state.emailValid ) {
-      this.setState( { submitDisabled: false } )
-      return
+
+  validateEmail(e) {
+    console.log(e.target.value);
+    if (this.state.name.length > 3 && this.state.email.length > 5 && this.state.message.length > 20 && this.state.emailValid) {
+      this.setState({ submitDisabled: false });
+      return;
     }
-    if ( this.state.name === '' || this.state.email === '' || this.state.message === '' || !this.state.emailValid ) {
-      this.state.submitDisabled = true
+    if (this.state.name === '' || this.state.email === '' || this.state.message === '' || !this.state.emailValid) {
+      setState({submitDisabled: true});
     }
-    this.state.submitDisabled = true
+    setState({submitDisabled: true});
   }
-  
-  handleChangeName = async e => {
-    this.setState( {
+
+  handleChangeName = async (e) => {
+    this.setState({
       name: e.target.value,
-    } );
-    this.validateEmail( e )
+    });
+    this.validateEmail(e);
   }
-  
-  handleChangeEmail = async e => {
-    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if ( re.test( e.target.value ) ) {
-      this.state.emailValid = true;
+
+  handleChangeEmail = async (e) => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (re.test(e.target.value)) {
+      setState({emailValid: true});
     } else {
-      this.state.emailValid = false;
+      setState({emailValid: false});
     }
-    this.setState( {
+    this.setState({
       email: e.target.value,
-    } );
-    this.validateEmail( e )
+    });
+    this.validateEmail(e);
   }
-  
-  handleChangeMessage = async e => {
-    this.setState( {
+
+  handleChangeMessage = async (e) => {
+    this.setState({
       message: e.target.value,
-    } );
-    this.validateEmail( e )
+    });
+    this.validateEmail(e);
   }
-  
-  handleSubmit = async e => {
-    console.log( "submit clicked" )
+
+  handleSubmit = async (e) => {
+    console.log('submit clicked');
     e.preventDefault();
-    const response = await fetch( '/api/contactMe', {
+    const response = await fetch('/api/contactMe', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify( {
+      body: JSON.stringify({
         name: this.state.name,
         email: this.state.email,
         message: this.state.message,
-      } ),
-    } );
+      }),
+    });
     const body = await response.text();
-    
-    this.setState( { responseToPost: body } );
+
+    this.setState({ responseToPost: body });
   }
-  
+
   render() {
-    
-    const theme = createMuiTheme( {
+    const theme = createMuiTheme({
       palette: {
         primary: {
           main: '#F55A44',
         },
         secondary: {
           main: '#00cc66',
-        }
+        },
       },
       overrides: {
         MuiInput: {
@@ -91,7 +91,7 @@ class Contact extends Component {
             },
           },
         },
-        MuiInputLabel: {  // this doesn't do anything. for the textfield label on hover color
+        MuiInputLabel: { // this doesn't do anything. for the textfield label on hover color
           root: {
             '&:hover:not($disabled):before': {
               color: '#00cc66',
@@ -99,18 +99,18 @@ class Contact extends Component {
           },
         },
       },
-    } );
-    
-    const SubmitContact = styled( Button )( {
+    });
+
+    const SubmitContact = styled(Button)({
       background: '#F55A44',
       color: 'white',
       marginTop: '3%',
-    } );
-    
+    });
+
     const textStyle = {
-      marginBottom: '2%'
-    }
-    
+      marginBottom: '2%',
+    };
+
     return (
       <>
         <MuiThemeProvider theme={theme}>
@@ -139,7 +139,7 @@ class Contact extends Component {
                 value={this.state.message}
                 onChange={this.handleChangeMessage}
                 label="Message"
-                multiline={true}
+                multiline
                 rows={8}
                 rowsMax={10}
                 style={textStyle}
