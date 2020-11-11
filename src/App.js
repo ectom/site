@@ -11,23 +11,23 @@ import Social from './components/Social';
 import Spacer from './components/Spacer';
 
 export default function App() {
-  return (
-    <div className="App">
-      <CssBaseline />
-      <Navbar />
-      <div>
-        <About />
-        <Spacer space={5} />
-        <Work />
-        <Spacer space={5} />
-        <Projects />
-        <Spacer space={5} />
-        <Education />
-        <Spacer space={5} />
-        <Contact />
-        <Spacer space={5} />
-        <Social />
-      </div>
-    </div>
-  );
+	return (
+		<div className="App">
+			<CssBaseline />
+			<Navbar />
+			<div>
+				<About />
+				<Spacer space={5} />
+				<Work />
+				<Spacer space={5} />
+				<Projects />
+				<Spacer space={5} />
+				<Education />
+				<Spacer space={5} />
+				<Contact />
+				<Spacer space={5} />
+				<Social />
+			</div>
+		</div>
+	);
 }

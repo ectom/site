@@ -16,28 +16,28 @@ import { createMuiTheme } from '@material-ui/core/styles';
 // };
 
 const theme = createMuiTheme({
-  overrides: {
-    MuiCssBaseline: {
-      '@global': {
-        'html, body, #root': {
-          height: '100%',
-        },
-        '#root': {
-          display: 'flex',
-          flexDirection: 'column',
-        },
-      },
-    },
-    MuiFormControlLabel: {
-      label: {
-        fontSize: 14,
-      },
-    },
-    textField: {
-      display: 'block',
-      marginBottom: '10px',
-    },
-  },
+	overrides: {
+		MuiCssBaseline: {
+			'@global': {
+				'html, body, #root': {
+					height: '100%',
+				},
+				'#root': {
+					display: 'flex',
+					flexDirection: 'column',
+				},
+			},
+		},
+		MuiFormControlLabel: {
+			label: {
+				fontSize: 14,
+			},
+		},
+		textField: {
+			display: 'block',
+			marginBottom: '10px',
+		},
+	},
 });
 
 export default theme;
