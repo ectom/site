@@ -159,12 +159,6 @@ const Contact = () => {
 								</SubmitButton>
 							</Grid>
 						</Grid>
-						<Grid item lg={3} style={{ marginTop: '-15px' }}>
-							<Typography variant="h6" align="left" style={{ color: '#e9ecef' }}>Contact Information</Typography>
-							<Typography variant="body1" align="left" style={{ color: '#e9ecef' }}>Ethan Tom</Typography>
-							<Typography variant="body1" align="left" style={{ color: '#e9ecef' }}>ethanchristophertom@gmail.com</Typography>
-							<Typography variant="body1" align="left" style={{ color: '#e9ecef' }}>San Francisco, CA 94118</Typography>
-						</Grid>
 					</Grid>
 				</Container>
 			</MuiThemeProvider>
