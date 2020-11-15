@@ -94,9 +94,9 @@ function About() {
 		}, []);
 
 		if (width < breakpoint) {
-			return {display: 'block', verticalAlign: 'top', margin: '50px 30%'};
+			return { display: 'block', verticalAlign: 'top', margin: '50px 30%' };
 		}
-		return {display: 'inline-block', verticalAlign: 'top', margin: '40px 0 0 120px'};
+		return { display: 'inline-block', verticalAlign: 'top', margin: '40px 0 0 120px' };
 	};
 
 	return (
@@ -148,25 +148,25 @@ function About() {
 										variant="h5"
 									>
 										Contact Information
-								</Typography>
+									</Typography>
 								</Grid>
 								<Grid item lg={12}>
 									<Typography variant="body2">
 										Ethan Tom
-								</Typography>
+									</Typography>
 								</Grid>
 								<Grid item lg={12}>
 									<Typography variant="body2">
 										ethanchristophertom@gmail.com
-								</Typography>
+									</Typography>
 								</Grid>
 								<Grid item lg={12}>
 									<Typography variant="body2">
 										San Francisco, CA
-								</Typography>
+									</Typography>
 								</Grid>
 							</Grid>
-							<Grid item style={ ResumeMargin() }>
+							<Grid item style={ResumeMargin()}>
 								<a
 									href={'EthanTomResume.pdf'}
 									download={'Ethan Tom Resume.pdf'}
