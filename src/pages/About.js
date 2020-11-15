@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles, Button } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
@@ -83,6 +83,22 @@ const useStyles = makeStyles({
 function About() {
 	const classes = useStyles();
 
+	const ResumeMargin = () => {
+		const [width, setWidth] = useState(window.innerWidth);
+		const breakpoint = 500;
+
+		useEffect(() => {
+			const handleWindowResize = () => setWidth(window.innerWidth);
+			window.addEventListener('resize', handleWindowResize);
+			return () => window.removeEventListener('resize', handleWindowResize);
+		}, []);
+
+		if (width < breakpoint) {
+			return {display: 'block', verticalAlign: 'top', margin: '50px 30%'};
+		}
+		return {display: 'inline-block', verticalAlign: 'top', margin: '40px 0 0 120px'};
+	};
+
 	return (
 		<>
 			<div style={{ display: 'block', height: '95vh' }}>
@@ -124,34 +140,33 @@ function About() {
 							{data.line3}
 						</Typography>
 						<Grid>
-						<Grid item lg={6} style={{ marginTop: '20px', display: 'inline-block' }}>
-							<Grid item lg={12}>
-								<Typography
-									id="About"
-									style={{ color: '#f8f8ff' }}
-									variant="h5"
-								>
-									Contact Information
+							<Grid item lg={5} style={{ marginTop: '20px', display: 'inline-block' }}>
+								<Grid item lg={12}>
+									<Typography
+										id="About"
+										style={{ color: '#f8f8ff' }}
+										variant="h5"
+									>
+										Contact Information
 								</Typography>
-							</Grid>
-							<Grid item lg={12}>
-								<Typography variant="body2">
-									Ethan Tom
+								</Grid>
+								<Grid item lg={12}>
+									<Typography variant="body2">
+										Ethan Tom
 								</Typography>
-							</Grid>
-							<Grid item lg={12}>
-								<Typography variant="body2">
-									ethanchristophertom@gmail.com
+								</Grid>
+								<Grid item lg={12}>
+									<Typography variant="body2">
+										ethanchristophertom@gmail.com
 								</Typography>
-							</Grid>
-							<Grid item lg={12}>
-								<Typography variant="body2">
-									San Francisco, CA
+								</Grid>
+								<Grid item lg={12}>
+									<Typography variant="body2">
+										San Francisco, CA
 								</Typography>
+								</Grid>
 							</Grid>
-						</Grid>
-						<Grid item lg={6} style={{ display: 'inline-block', verticalAlign: 'top', margin: '40px 0 0 120px' }}>
-							<Grid item lg={12}>
+							<Grid item style={ ResumeMargin() }>
 								<a
 									href={'EthanTomResume.pdf'}
 									download={'Ethan Tom Resume.pdf'}
@@ -167,7 +182,6 @@ function About() {
 									</Button>
 								</a>
 							</Grid>
-						</Grid>
 						</Grid>
 					</div>
 					<div style={{ display: 'inline-block', verticalAlign: 'top', marginTop: '70px' }}>
