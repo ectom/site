@@ -1,7 +1,8 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core';
+import React, { useState, useEffect } from 'react';
+import { makeStyles, Button } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
 import theme from '../styles';
 import Link from '../components/Link.js';
 import data from '../data/about.json';
@@ -70,10 +71,33 @@ const useStyles = makeStyles({
 	p: {
 		marginBottom: '10px',
 	},
+	button: {
+		color: '#fca311',
+		borderColor: '#fca311',
+	},
+	a: {
+		textDecoration: 'none',
+	}
 });
 
 function About() {
 	const classes = useStyles();
+
+	const ResumeMargin = () => {
+		const [width, setWidth] = useState(window.innerWidth);
+		const breakpoint = 500;
+
+		useEffect(() => {
+			const handleWindowResize = () => setWidth(window.innerWidth);
+			window.addEventListener('resize', handleWindowResize);
+			return () => window.removeEventListener('resize', handleWindowResize);
+		}, []);
+
+		if (width < breakpoint) {
+			return { display: 'block', verticalAlign: 'top', margin: '50px 30%' };
+		}
+		return { display: 'inline-block', verticalAlign: 'top', margin: '40px 0 0 120px' };
+	};
 
 	return (
 		<>
@@ -100,7 +124,7 @@ function About() {
 							style={{ color: '#f8f8ff' }}
 							variant="h3"
 						>
-              About Me
+							About Me
 						</Typography>
 						<Typography variant="body1" className={classes.p}>
 							{data.line1}
@@ -115,30 +139,48 @@ function About() {
 						<Typography variant="body1" className={classes.p}>
 							{data.line3}
 						</Typography>
-						<Grid item lg={6} style={{ marginTop: '20px' }}>
-							<Grid item lg={12}>
-								<Typography
-									id="About"
-									style={{ color: '#f8f8ff' }}
-									variant="h5"
+						<Grid>
+							<Grid item lg={5} style={{ marginTop: '20px', display: 'inline-block' }}>
+								<Grid item lg={12}>
+									<Typography
+										id="About"
+										style={{ color: '#f8f8ff' }}
+										variant="h5"
+									>
+										Contact Information
+									</Typography>
+								</Grid>
+								<Grid item lg={12}>
+									<Typography variant="body2">
+										Ethan Tom
+									</Typography>
+								</Grid>
+								<Grid item lg={12}>
+									<Typography variant="body2">
+										ethanchristophertom@gmail.com
+									</Typography>
+								</Grid>
+								<Grid item lg={12}>
+									<Typography variant="body2">
+										San Francisco, CA
+									</Typography>
+								</Grid>
+							</Grid>
+							<Grid item style={ResumeMargin()}>
+								<a
+									href={'EthanTomResume.pdf'}
+									download={'Ethan Tom Resume.pdf'}
+									className={classes.a}
 								>
-                  Contact Information
-								</Typography>
-							</Grid>
-							<Grid item lg={12}>
-								<Typography variant="body2">
-                  Ethan Tom
-								</Typography>
-							</Grid>
-							<Grid item lg={12}>
-								<Typography variant="body2">
-                  ethanchristophertom@gmail.com
-								</Typography>
-							</Grid>
-							<Grid item lg={12}>
-								<Typography variant="body2">
-                  San Francisco, CA
-								</Typography>
+									<Button
+										variant="outlined"
+										color="default"
+										className={classes.button}
+										startIcon={<CloudDownloadIcon />}
+									>
+										Resume
+									</Button>
+								</a>
 							</Grid>
 						</Grid>
 					</div>
